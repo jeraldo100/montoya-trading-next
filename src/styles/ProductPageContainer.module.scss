@@ -1,4 +1,4 @@
-/* Color Pallete and Font Family */
+/* Color Pallete */
 @import "./ColorPallete.module.scss"; 
 
 .productContainer{
@@ -25,13 +25,9 @@
 }
 
 .prodName{
-    font-family: $roboto;
-	font-weight: 700;
 	font-size: xx-large;
 }
 .prodBrand{
-    font-family: $roboto;
-	font-weight: 300;
 	font-size: x-large;
 }
 

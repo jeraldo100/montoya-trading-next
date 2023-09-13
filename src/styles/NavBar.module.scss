@@ -1,4 +1,4 @@
-/* Color Pallete and Font Family */
+/* Color Pallete */
 @import "./ColorPallete.module.scss"; 
 
 .NavBar{
@@ -25,8 +25,6 @@
 }
 
 .HomeLink{
-	font-family: $roboto;
-	font-weight: 700;
 	font-size: x-large;
 	color: $BlueGreen;
 	text-decoration: none;
@@ -37,8 +35,6 @@
 
 .NavLinks{
 	text-decoration: none;
-	font-family: $roboto;
-	font-weight: 300;
 	font-size: medium;
 	color: white;
 	padding: 0.8em;

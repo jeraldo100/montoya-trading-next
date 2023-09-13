@@ -1,11 +1,9 @@
-/* Color Pallete and Font Family */
+/* Color Pallete */
 @import "../ColorPallete.module.scss"; 
 
 .contactH1{
     margin: 0.6em 0em 0.6em 24px;
     color: $Grey;
-    font-family: $roboto;
-    font-weight: 300;
 }
 
 .contacts{
@@ -13,14 +11,8 @@
     flex-direction: column;
     gap: 0.4em;
     margin-left: 24px;
-    font-family: $roboto;
-    font-weight: 300;
     font-size: large;
     color: $Grey;
-}
-
-.bold{
-    font-weight: 400;
 }
 
 .icons{
@@ -30,8 +22,6 @@
 
 .requestH1{
     color: $Grey;
-    font-family: $roboto;
-    font-weight: 300;
     margin-top: 0.5em;
     margin-bottom: 1em;
 }

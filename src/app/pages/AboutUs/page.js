@@ -1,13 +1,14 @@
 import React from 'react'
 import styles from '../../../styles/PagesCSS/AboutUs.module.scss';
+import { roboto300, roboto700 } from '@/app/fonts';
 
 function AboutUs() {
     return (
         <>
-            <h1 className={styles.aboutH1}>About Us</h1>
+            <h1 className={`${styles.aboutH1} ${roboto300.className}`}>About Us</h1>
             <div className={styles.bodyBackground}>
-                <h1 className={styles.MontoyaH1}>Montoya Trading</h1>
-                <p className={styles.paragraphs}>
+                <h1 className={`${styles.MontoyaH1} ${roboto700.className}`}>Montoya Trading</h1>
+                <p className={`${styles.paragraphs} ${roboto300.className}`}>
                     Suspendisse tristique orci nisi, et ultricies elit varius at. Nulla posuere sem odio, ac feugiat dui blandit eget. Maecenas accumsan quam at gravida dictum. Etiam tempus nibh vel turpis pellentesque, semper aliquet enim efficitur. Aenean efficitur vel quam sit amet finibus. Suspendisse potenti. Integer a mi tempor metus tristique aliquet eget ut eros. Praesent lectus felis, porta bibendum erat mattis, ultrices lacinia sapien.
                     <br /><br />
                     Nullam et odio ac dui facilisis finibus mollis a diam. Praesent turpis risus, placerat at finibus ut, placerat at ligula. Integer sed tellus sit amet lacus tincidunt tincidunt nec at odio. Nunc sed cursus magna. Curabitur vitae viverra ligula. Phasellus ac ullamcorper ante, at interdum augue. Curabitur gravida orci vel eros suscipit mollis. Curabitur aliquet, lacus sed malesuada pretium, purus dolor gravida nunc, nec rutrum tellus leo nec magna. Sed vel lobortis leo, quis dapibus nibh. Ut ut fringilla mauris, sed imperdiet magna.

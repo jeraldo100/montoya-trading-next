@@ -1,10 +1,8 @@
-/* Color Pallete and Font Family */
+/* Color Pallete */
 @import "../ColorPallete.module.scss"; 
 
 .aboutH1{
     color: $Grey;
-    font-family: $roboto;
-    font-weight: 300;
     font-size: xx-large;
     margin-left: 24px;
     margin-top: 1em;
@@ -17,8 +15,6 @@
 
 .MontoyaH1{
     color: $BlueGreen;
-    font-family: $roboto;
-    font-weight: 700;
     font-size: xx-large;
     padding-top: 12px;
     margin-bottom: 12px;
@@ -26,8 +22,6 @@
 }
 
 .paragraphs{
-    font-family: $roboto;
-    font-weight: 300;
     font-size: medium;
     margin-left: 24px;
     margin-right: 24px;

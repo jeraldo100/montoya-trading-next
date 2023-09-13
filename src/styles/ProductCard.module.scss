@@ -1,4 +1,4 @@
-/* Color Pallete and Font Family */
+/* Color Pallete */
 @import "./ColorPallete.module.scss"; 
 
 .ProductCard{
@@ -21,8 +21,6 @@
     height: 20%;
     width: auto;
     font-size: small;
-    font-family: $roboto;
-    font-weight: 300;
     text-align: justify;
     color: white;
     background-color: $BlueGreen;

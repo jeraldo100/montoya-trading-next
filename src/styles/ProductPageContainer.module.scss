@@ -1,0 +1,58 @@
+/* Color Pallete and Font Family */
+@import "./ColorPallete.module.scss"; 
+
+.productContainer{
+    width: auto;
+    height: fit-content;
+    padding: 24px;
+    background-color: $backgroundWhite;
+}
+
+.image{
+    height: 300px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.layer1{
+    display: flex;
+    flex-direction: row;
+}
+.layer2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5em;
+}
+
+.prodName{
+    font-family: 'roboto', sans-serif;
+	font-weight: 700;
+	font-size: xx-large;
+}
+.prodBrand{
+    font-family: 'roboto', sans-serif;
+	font-weight: 300;
+	font-size: x-large;
+}
+
+/* Scale to Small Screens */
+@media only screen and (max-width: 768px) {
+    .layer1 {
+    	flex-direction: column;
+    }
+    .layer2{
+        margin-left: 0;
+        margin-top: 1em;
+    }
+}
+@media only screen and (max-width: 640px) {
+	.NavBar{
+		gap: 100px;
+	}
+    .HomeLink {
+		font-size: small;
+	}
+	.NavLinks{
+		font-size: x-small;
+	}
+}

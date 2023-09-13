@@ -1,0 +1,10 @@
+.ProductsContainer{
+    box-sizing: border-box;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: auto;
+}

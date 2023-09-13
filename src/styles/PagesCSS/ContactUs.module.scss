@@ -1,0 +1,66 @@
+/* Color Pallete and Font Family */
+@import "../ColorPallete.module.scss"; 
+
+.contactH1{
+    margin: 0.6em 0em 0.6em 24px;
+    color: $Grey;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    margin-left: 24px;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    font-size: large;
+    color: $Grey;
+}
+
+.bold{
+    font-weight: 400;
+}
+
+.icons{
+	position: relative;
+	top: 2.5px;
+}
+
+.requestH1{
+    color: $Grey;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.formContainer{
+    margin-top: 1em;
+    background-color: $backgroundWhite;
+    padding: 12px 24px 24px 24px;
+}
+
+@media only screen and (max-width: 768px) {
+    .contactH1{
+        font-size: larger;
+    }
+    .contacts{
+        font-size: small;
+    }
+    .requestH1{
+        font-size: larger;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #contactH1{
+        font-size: large;
+    }
+    .contacts{
+        font-size: x-small;
+    }
+    .requestH1{
+        font-size: large;
+    }
+}

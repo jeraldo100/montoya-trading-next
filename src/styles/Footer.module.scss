@@ -1,0 +1,26 @@
+/* Color Pallete and Font Family */
+@import "./ColorPallete.module.scss"; 
+
+.Footer{
+	display: flex;
+	justify-content: space-between;
+	background-color: $Blue;
+	margin-bottom: 0;
+	padding: 10px;
+	align-items: center;
+}
+
+.Footer p{
+	font-size: 12px;
+	color: white;
+}
+
+.Footer img{
+	width: 100px;
+}
+
+.Socials{
+	color: $BlueWhite;
+	font-size: 12px;
+    margin-left: 3px;
+}

@@ -1,4 +1,5 @@
 // import styles from './page.module.css'
+import './globals.scss'
 import ProductsContainer from '@/components/ProductsContainer'
 import HomeCarousel from '@/components/HomeCarousel'
 import { GetHomeCarouselPics } from "@/components/GetHomeCarouselPics.query";

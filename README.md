@@ -19,8 +19,11 @@ A relatively simple website for my first project after graduating
 ## Tech Stack
 
 -Next.js (https://nextjs.org/)
+
 -Vercel  (https://vercel.com/)
+
 -Sanity.io (https://www.sanity.io/)
+
 -Resend --to be added (https://resend.com/)
 
 I first tackled this project using React.js but then moved it into Next.js for better page routing and SEO Optimization and because it just pairs well with Vercel.

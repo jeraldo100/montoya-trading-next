@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sogdian&family=Roboto:wght@300;400;700&display=swap');
+
 body {
     margin: 0;
     // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -27,8 +29,7 @@ body {
 /* https://colorhunt.co/palette/191a191e51284e9f3dd8e9a8 */
 /* https://colorhunt.co/palette/343434055e6862a388b9d2d2 */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sogdian&family=Roboto:wght@300;400;700&display=swap');
-
+$roboto: 'roboto', sans-serif;
 
 $BlackGreen: #191A19;
 $DarkGreen: #1E5128;

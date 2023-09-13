@@ -9,7 +9,7 @@
 
 .text, .category, .question {
     border: 1px solid #ccc;
-    font-family: 'roboto', sans-serif;
+    font-family: $roboto;
     font-weight: 300;
     font-size: large;
     padding: 0.6em;
@@ -38,7 +38,7 @@
 
 .labels{
     color: $Grey;
-    font-family: 'roboto', sans-serif;
+    font-family: $roboto;
     font-weight: 300;
     font-size: larger;
 }
@@ -57,7 +57,7 @@
 
 .submitButon{
     padding: 0.8em;
-    font-family: 'roboto', sans-serif;
+    font-family: $roboto;
     font-weight: 300;
     font-size: larger;
     color: white;

@@ -25,7 +25,7 @@
 }
 
 .HomeLink{
-	font-family: 'roboto', sans-serif;
+	font-family: $roboto;
 	font-weight: 700;
 	font-size: x-large;
 	color: $BlueGreen;
@@ -37,7 +37,7 @@
 
 .NavLinks{
 	text-decoration: none;
-	font-family: 'roboto', sans-serif;
+	font-family: $roboto;
 	font-weight: 300;
 	font-size: medium;
 	color: white;

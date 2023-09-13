@@ -4,7 +4,7 @@
 .contactH1{
     margin: 0.6em 0em 0.6em 24px;
     color: $Grey;
-    font-family: 'roboto', sans-serif;
+    font-family: $roboto;
     font-weight: 300;
 }
 
@@ -13,7 +13,7 @@
     flex-direction: column;
     gap: 0.4em;
     margin-left: 24px;
-    font-family: 'roboto', sans-serif;
+    font-family: $roboto;
     font-weight: 300;
     font-size: large;
     color: $Grey;
@@ -30,7 +30,7 @@
 
 .requestH1{
     color: $Grey;
-    font-family: 'roboto', sans-serif;
+    font-family: $roboto;
     font-weight: 300;
     margin-top: 0.5em;
     margin-bottom: 1em;

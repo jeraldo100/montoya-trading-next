@@ -3,7 +3,7 @@
 
 .aboutH1{
     color: $Grey;
-    font-family: 'roboto', sans-serif;
+    font-family: $roboto;
     font-weight: 300;
     font-size: xx-large;
     margin-left: 24px;
@@ -17,7 +17,7 @@
 
 .MontoyaH1{
     color: $BlueGreen;
-    font-family: 'roboto', sans-serif;
+    font-family: $roboto;
     font-weight: 700;
     font-size: xx-large;
     padding-top: 12px;
@@ -26,7 +26,7 @@
 }
 
 .paragraphs{
-    font-family: 'roboto', sans-serif;
+    font-family: $roboto;
     font-weight: 300;
     font-size: medium;
     margin-left: 24px;

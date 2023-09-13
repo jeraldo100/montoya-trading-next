@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sogdian&family=Roboto:wght@300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sogdian&family=Roboto:wght@300;400;700&display=swap');
+/* Color Pallete and Font Family */
+@import "../styles/ColorPallete.module.scss"; 
 
 body {
     margin: 0;
@@ -29,16 +31,16 @@ body {
 /* https://colorhunt.co/palette/191a191e51284e9f3dd8e9a8 */
 /* https://colorhunt.co/palette/343434055e6862a388b9d2d2 */
 
-$roboto: 'roboto', sans-serif;
+// $roboto: 'roboto', sans-serif;
 
-$BlackGreen: #191A19;
-$DarkGreen: #1E5128;
-$Green: #4E9F3D;
-$LightGreen: #D8E9A8;
+// $BlackGreen: #191A19;
+// $DarkGreen: #1E5128;
+// $Green: #4E9F3D;
+// $LightGreen: #D8E9A8;
 
-$Grey: #343434;
-$Blue: #055E68;
-$BlueGreen: #62A388;
-$BlueWhite: #B9D2D2;
+// $Grey: #343434;
+// $Blue: #055E68;
+// $BlueGreen: #62A388;
+// $BlueWhite: #B9D2D2;
 
-$backgroundWhite: #F5F5DC;
+// $backgroundWhite: #F5F5DC;

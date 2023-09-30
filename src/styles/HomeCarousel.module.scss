@@ -3,12 +3,13 @@
 
 .homeCarousel{
     width: 100%;
+    background-color: $BlackGreen;
     
 }
 
 .image{
     aspect-ratio: 20 / 9;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .carouselArrows{

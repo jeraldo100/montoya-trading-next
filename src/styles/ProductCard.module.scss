@@ -7,7 +7,6 @@
     flex-wrap: nowrap;
     cursor: pointer;
     border-radius: 5px;
-    width: 250px;
     aspect-ratio: 4 / 3;
     box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.22);
     transition: 0.3s;
@@ -26,7 +25,7 @@
     background-color: $BlueGreen;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-
+    
 }
 
 .ProductCardBody{
@@ -34,25 +33,26 @@
     width: auto;
     display: flex;
     justify-content: center;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .productImg{
     width: 95%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
     border-radius: 3px;
+    object-fit: cover;
 }
 
 /* Product Card Scale to Small Screens */
 @media only screen and (max-width: 768px) {
-    .ProductCard {
-      width: 200px;
-    }
     .ProductCardTop{
         font-size: x-small;
     }
 }
 @media only screen and (max-width: 640px) {
     .ProductCard {
-      width: 150px;
+        font-size: xx-small;
     }
 }

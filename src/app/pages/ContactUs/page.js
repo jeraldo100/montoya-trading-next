@@ -34,6 +34,7 @@ function ContactUs() {
         </div>
         <div className={styles.formContainer}>
             <h1 className={`${styles.requestH1} ${roboto300.className}`}>Send a Request</h1>
+            {/* Import Email Send a Request */}
             <EmailForm />
         </div>
     </>

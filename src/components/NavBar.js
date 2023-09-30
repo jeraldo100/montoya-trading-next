@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import styles from '../styles/NavBar.module.scss';
 import { roboto300, roboto700 } from '@/app/fonts';
+import { BsFillBoxSeamFill } from "react-icons/bs";
+import { FaBoxes } from "react-icons/fa";
 import { BiSolidShoppingBag } from "react-icons/bi";
 import { BiSolidEnvelope } from "react-icons/bi";
 import { BiSolidInfoCircle } from "react-icons/bi";
@@ -19,15 +21,19 @@ function NavBar() {
 					<Link 
 						href="/pages/ProductsPage" 
 						className={`${styles.NavLinks} ${roboto300.className}`}>
-							Products
+							Products <BsFillBoxSeamFill className={styles.NavLinksIcons} />
+					</Link>
+					<Link 
+						href="/pages/Packages" 
+						className={`${styles.NavLinks} ${roboto300.className}`}>
+							Packages <FaBoxes className={styles.NavLinksIcons} />
 					</Link>
 					<a 
 						href = "https://www.facebook.com/montoyatrading/" 
 						target="_blank" style={{textDecoration: 'none'}}>
 							<div 
 								className={`${styles.NavLinks} ${roboto300.className}`}>
-									Shop Now <BiSolidShoppingBag 
-										className={styles.NavLinksIcons} />
+									Shop Now <BiSolidShoppingBag className={styles.NavLinksIcons} />
 							</div>
 					</a>
 				</div>
@@ -35,8 +41,7 @@ function NavBar() {
 					<Link 
 						href="/pages/AboutUs" 
 						className={`${styles.NavLinks} ${roboto300.className}`}>
-							About Us <BiSolidInfoCircle 
-							className={styles.NavLinksIcons} />
+							About Us <BiSolidInfoCircle className={styles.NavLinksIcons} />
 					</Link>
 					<Link 
 						href="/pages/ContactUs" 

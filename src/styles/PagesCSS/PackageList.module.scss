@@ -1,9 +1,14 @@
+.packageListContainer{
+	display: flex;
+	flex-direction: column;
+	margin: 14px 24px 14px 24px;
+	min-height: 80vh;
+}
+
 .packageList{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 10px;
-	margin: 14px 24px 14px 24px;
-	
 }
 
 /* Scale to Small Screens */

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '@/styles/PackageInfo.module.scss'
-import ProductsContainer from './ProductsContainer'
+import ProductCard from './ProductCard'
 import { roboto300, roboto700 } from '@/app/fonts'
 
 function PackageInfo({ name, thumbPic, description, inclusions }) {
@@ -31,9 +31,19 @@ function PackageInfo({ name, thumbPic, description, inclusions }) {
 			<p className={`${styles.inclusionsHeader} ${roboto700.className}`}>
 				Inclusions:
 			</p>
-			<ProductsContainer 
-				products={inclusions}
-			/>
+			<div className={styles.inclusionsContainer}>
+				{inclusions.map((inclusion) => {
+					return(
+						<ProductCard 
+							key={inclusion.key}
+							name={inclusion.name}
+							thumbPic={inclusion.thumbPic}
+							slug={inclusion.slug}
+							setWidth={true}
+						/>
+					)
+				})}
+			</div>
 		</div>
 		
 	</>

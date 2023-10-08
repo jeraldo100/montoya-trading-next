@@ -40,7 +40,7 @@ export async function GetPackageInfo( params ){
 		"thumbPic": thumbPic.asset->url,
 		description,
 		"inclusions": inclusions[]->{
-			_id,
+			"key": _id,
 			name,
 			"slug": slug.current,
 			"thumbPic": thumbPic.asset->url,

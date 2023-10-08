@@ -36,7 +36,15 @@ export async function GetProductInfo( params ){
 		"thumbPic": thumbPic.asset->url,
 		brand,
 		description,
-		"specs": specs[]{specType, specVal}
+		"specs": specs[]{specType, specVal},
+		"packagedIn": *[_type=='packages' && references(^._id)] | order(_createdAt desc){
+			"key": _id,
+			name,
+			"slug": slug.current,
+			"thumbPic": thumbPic.asset->url,
+			description,
+			"inclusionsCount": count(inclusions),
+		}[0...5]
     }[0]`;
     
     const product = await client.fetch(query);

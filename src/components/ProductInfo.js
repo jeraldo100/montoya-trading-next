@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/ProductInfo.module.scss'
+import PackageCard from './PackageCard';
 import { roboto300, roboto500, roboto700 } from '@/app/fonts';
 
 function ProductInfo({ product }) {
@@ -30,30 +31,60 @@ function ProductInfo({ product }) {
                         <pre className={`${styles.description} ${roboto300.className}`}>
                             {product.description}
                         </pre>
-                        <h1 className={`${styles.specsH1} ${roboto500.className}`}>
-                            Specifications:
+                        {product.specs !== null || product.packagedIn !== undefined ?
+                            <>
+                                <h1 className={`${styles.specsH1} ${roboto500.className}`}>
+                                    Specifications:
+                                </h1>
+                                {/* Coulb be presented better with flexbox */}
+                                <div className={styles.specs}>
+                                    {product.specs.map((spec) => {
+                                        return(
+                                            <>
+                                                <p>
+                                                    <span className={roboto500.className}>
+                                                        {spec?.specType}:
+                                                    </span>
+                                                    <span> </span>
+                                                    <span className={roboto300.className}>
+                                                        {spec?.specVal}
+                                                    </span>
+                                                </p>
+                                                <hr/>
+                                            </>
+                                        );
+                                    })}
+                                </div>
+                            </>
+                            :
+                                <></>
+                        }
+                    </div>
+                </div>
+                {product.packagedIn.length !== 0  ?
+                    <>
+                        <h1 className={`${styles.packagesHeader} ${roboto500.className}`}>
+                            Also Included in these packages:
                         </h1>
-                        {/* Coulb be presented better with flexbox */}
-                        <div className={styles.specs}>
-                            {product.specs.map((spec) => {
-                                return(
+                        <div className={styles.packageList}>
+                            {product.packagedIn.map((pack) => {
+                                return (
                                     <>
-                                        <p>
-                                            <span className={roboto500.className}>
-                                                {spec.specType}:
-                                            </span>
-                                            <span> </span>
-                                            <span className={roboto300.className}>
-                                                {spec.specVal}
-                                            </span>
-                                        </p>
-                                        <hr/>
+                                        <PackageCard
+                                            key={pack.key}
+                                            name={pack.name}
+                                            slug={pack.slug}
+                                            thumbPic={pack.thumbPic}
+                                            description={pack.description}
+                                            inclusionsCount={pack.inclusionsCount}
+                                        />
                                     </>
                                 );
                             })}
                         </div>
-                    </div>
-                </div>
+                    </> :
+                        <></>
+                }
             </div>
         </>
     )

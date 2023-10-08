@@ -11,7 +11,7 @@
 	justify-content: space-between;
 	padding-left: 12px;
 	padding-right: 12px;
-	gap: 20px;
+	gap: 0.8rem;
 	position: sticky;
 	top: 0;
 	z-index: 4;
@@ -19,16 +19,23 @@
 
 .NavStart, .NavEnd{
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: row;
 	align-items: center;
-	gap: 10px;
+	gap: 0.8em;
 }
+
+.desktopOptions{
+	display: flex;
+	flex-direction: row;
+	gap: 0.8em;
+}
+
 
 .HomeLink{
 	font-size: x-large;
 	color: $BlueGreen;
 	text-decoration: none;
-	padding: 12px;
+	padding: 0.4em 12px 0.4em 12px;
 	transition: 0.3s;
 	white-space: nowrap;
 }
@@ -65,25 +72,50 @@
  	transform-origin: left;
 }
 
+// .offCanvasBtn{
+// 	display: none;
+// 	font-size: x-large;
+// 	color: $BlueGreen;
+// 	height: fit-content;
+// 	width: fit-content;
+// 	padding: 0.2em;
+// 	transition: 0.3s;
+// }
+// .offCanvasBtn:hover{
+// 	color: white;
+// 	cursor: pointer;
+// }
+
 /* Link text Scale to Small Screens */
+@media only screen and (max-width: 860px) {
+    .HomeLink {
+    	font-size: large;
+    }
+	.NavLinks{
+		font-size: small;
+	}
+}
 @media only screen and (max-width: 768px) {
     .HomeLink {
     	font-size: medium;
-		padding: 6px;
     }
-	#NavLinks{
-		font-size: small;
-		padding: 6px;
-	}
-}
-@media only screen and (max-width: 640px) {
-	.NavBar{
-		gap: 100px;
-	}
-    .HomeLink {
-		font-size: small;
-	}
 	.NavLinks{
 		font-size: x-small;
 	}
 }
+@media only screen and (max-width: 640px) {
+    .HomeLink {
+    	font-size: small;
+    }
+	.NavLinks{
+		font-size: xx-small;
+	}
+}
+// @media only screen and (max-width: 640px) {
+// 	.desktopOptions{
+// 		display: none;
+// 	}
+// 	.offCanvasBtn{
+// 		display: block;
+// 	}
+// }

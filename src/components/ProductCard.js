@@ -8,7 +8,7 @@ function ProductCard({key, name, thumbPic, slug, setWidth}) {
     return (
       <>
         <Link href={`/pages/ProductsPage/${ slug }`} style={{ textDecoration: 'none' }}>
-          <div key={key} className={styles.ProductCard} style={{width: setWidth ? '12em' : 'auto'}}>
+          <div key={key} className={styles.ProductCard} style={{width: setWidth ? '40vmin' : 'auto'}}>
             <div className={`${styles.ProductCardTop} ${roboto300.className}`}>
                 {name}
             </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '@/styles/PackageInfo.module.scss'
-import ProductCard from './ProductCard'
+import HorizontalProductsContainer from './HorizontalProductsContainer'
 import { roboto300, roboto700 } from '@/app/fonts'
 
 function PackageInfo({ name, thumbPic, description, inclusions }) {
@@ -27,25 +27,14 @@ function PackageInfo({ name, thumbPic, description, inclusions }) {
 					</pre>
 				</div>
 			</div>
-			{/* Inclusions Container */}
+			{/* Inclusions */}
 			<p className={`${styles.inclusionsHeader} ${roboto700.className}`}>
 				Inclusions:
 			</p>
-			<div className={styles.inclusionsContainer}>
-				{inclusions.map((inclusion) => {
-					return(
-						<ProductCard 
-							key={inclusion.key}
-							name={inclusion.name}
-							thumbPic={inclusion.thumbPic}
-							slug={inclusion.slug}
-							setWidth={true}
-						/>
-					)
-				})}
-			</div>
+			<HorizontalProductsContainer 
+				products={inclusions}
+			/>
 		</div>
-		
 	</>
   )
 }

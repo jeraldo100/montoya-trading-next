@@ -1,0 +1,28 @@
+/* Color Pallete */
+@import "@/styles/ColorPallete.module.scss"; 
+
+.newArrivalsContainer{
+	background-color: $backgroundWhite;
+	padding: 1em 24px 1em 24px;
+}
+
+.newArrivalsText{
+	font-size: xx-large;
+	color: $BlueGreen;
+}
+.newArrivalsHeader{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.viewMore{
+	font-size: large;
+	color: $BlueGreen;
+	text-decoration: none;
+	align-self: last baseline;
+}
+
+.icons{
+	position: relative;
+	top: 2px;
+}

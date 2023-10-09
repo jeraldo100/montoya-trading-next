@@ -49,14 +49,6 @@
 	margin-bottom: 1em;
 }
 
-.inclusionsContainer{
-	display: flex;
-	flex-direction: row;
-	padding: 1em 1em 1em 1em;
-	overflow: auto;
-	gap: 1em;
-}
-
 @media only screen and (max-width: 768px) {
 	.imgAndInfo{
 		flex-direction: column;

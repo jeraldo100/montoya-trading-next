@@ -1,7 +1,7 @@
 import React from 'react'
 import client from '@/components/sanity.client'
 import styles from '@/styles/PagesCSS/PackageList.module.scss'
-import PackageCard from '@/components/PackageCard'
+import PackageCardsContainer from '@/components/PackageCardsContainer'
 import SearchBarPackageList from '@/components/SearchBarPackageList'
 import Pagination from '@/components/Pagination';
 import NotFound from '@/components/NotFound';
@@ -27,26 +27,14 @@ async function PackageList({ searchParams }) {
 		<>
 			<div className={styles.packageListContainer}>
 				<SearchBarPackageList />
-				{packs.packNums >= 1 ? 
+				{packs.packageNums >= 1 ? 
 					<>
-						<div className={styles.packageList}>
-							{packs.packLists.map((packList) => { return(
-								<>
-									<PackageCard
-										key={packList.key}
-										name={packList.name}
-										slug={packList.slug}
-										thumbPic={packList.thumbPic}
-										description={packList.description}
-										inclusionsCount={packList.inclusionsCount}
-
-									/>
-								</>
-							)})}
-						</div>
-						{packs.packNums >=  defaultSlice?
+						<PackageCardsContainer
+							packageLists={packs.packageLists}
+						/>
+						{packs.packageNums >=  defaultSlice?
 							<Pagination
-								queryNums={packs.packNums}
+								queryNums={packs.packageNums}
 								defaultSlice={defaultSlice}
 							/> :
 								<></>
@@ -62,8 +50,8 @@ async function PackageList({ searchParams }) {
 export async function GetPackagelist(query, pageSlice){
     const packs = await client.fetch( 
 		`{
-			"packNums": count(${query}),
-			"packLists": ${query}{
+			"packageNums": count(${query}),
+			"packageLists": ${query}{
 				"key": _id,
 				name,
 				"slug": slug.current,

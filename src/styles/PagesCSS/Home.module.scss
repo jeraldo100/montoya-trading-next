@@ -1,16 +1,50 @@
 /* Color Pallete */
 @import "@/styles/ColorPallete.module.scss"; 
 
+.headline{
+	padding: 1em 24px 2em 24px;
+}
+.headlineHeader{
+	font-size: xx-large;
+	color: $BlueGreen;
+}
+.headlineBody{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 2em;
+	width: auto;
+	height: fit-content;
+}
+.headlineBodyText{
+	flex: 1;
+	font-size: medium;
+	align-self: center;
+}
+.headlineBodyImgContiainer{
+	flex: 1;
+}
+.headlineBodyImg{
+	border-radius: 1rem;
+	height: auto;
+	width: 100%;
+}
+
 .newArrivalsContainer{
 	background-color: $backgroundWhite;
 	padding: 1em 24px 1em 24px;
 }
-
-.newArrivalsText{
+.packagesContainer{
+	display: flex;
+	flex-direction: column;
+	gap: 0.8em;
+	padding: 1em 24px 1em 24px;
+}
+.selectionHeaderText{
 	font-size: xx-large;
 	color: $BlueGreen;
 }
-.newArrivalsHeader{
+.selectionHeader{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -21,8 +55,50 @@
 	text-decoration: none;
 	align-self: last baseline;
 }
-
 .icons{
 	position: relative;
 	top: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+	.headlineHeader{
+		font-size: x-large;
+	}
+	.headlineBodyText{
+		font-size: small;
+	}
+	.selectionHeaderText{
+		font-size: x-large;
+	}
+	.viewMore{
+		font-size: medium;
+	}
+}
+@media only screen and (max-width: 640px) {
+	.headlineHeader{
+		font-size: large;
+	}
+	.headlineBodyText{
+		font-size: x-small;
+	}
+	.selectionHeaderText{
+		font-size: large;
+	}
+	.viewMore{
+		font-size: small;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.headlineHeader{
+		font-size: medium;
+	}
+	.headlineBodyText{
+		font-size: xx-small;
+	}
+	.selectionHeaderText{
+		font-size: medium;
+	}
+	.viewMore{
+		font-size: small;
+	}
 }

@@ -14,6 +14,19 @@ async function ProductPage({ params }) {
   )
 }
 
+export async function generateMetadata({ params }){
+	const product = await client.fetch(
+		`*[_type == "products" && slug.current == '${ params.slug }']{
+			name,
+			description,
+		}[0]`
+	);
+	return {
+		title: product.name,
+		description: product.description.slice(0, 160),
+	}
+}
+
 //Statically generate routes at build time instead of on-demand at request time
 export async function generateStaticParams() {
 	const query = `*[_type == "products"]{

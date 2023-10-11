@@ -1,22 +1,20 @@
 import React from 'react'
 import styles from '../../../styles/PagesCSS/ContactUs.module.scss';
-import EmailForm from '@/components/EmailForm';
+// import EmailForm from '@/components/EmailForm';
 import { roboto300, roboto500 } from '@/app/fonts';
-import { BiSolidEnvelope } from "react-icons/bi";
+import { BiSolidEnvelope, BiLogoFacebookCircle, BiSolidMap } from "react-icons/bi";
 import { FaViber } from "react-icons/fa";
-import { BiLogoFacebookCircle } from "react-icons/bi";
-import { BiSolidMap } from "react-icons/bi";
-
 
 function ContactUs() {
   return (
     <>
         <h1 className={`${styles.contactH1} ${roboto300.className}`}>Contact Us</h1>
         <div className={`${styles.contacts} ${roboto300.className}`}>
-            <p>
+            
+            <div>
               <BiSolidEnvelope className={styles.icons} /> 
               <span className={roboto500.className}>Email Us</span>: montoya_trading@yahoo.com
-            </p>
+            </div>
             <p>
               <FaViber className={styles.icons} /> 
               <span className={roboto500.className}>Viber</span>: +639195956096
@@ -32,11 +30,11 @@ function ContactUs() {
               <span className={roboto500.className}>Location</span>: Marulas, Valenzuela City, Philippines
             </p>
         </div>
-        <div className={styles.formContainer}>
+        {/* <div className={styles.formContainer}>
             <h1 className={`${styles.requestH1} ${roboto300.className}`}>Send a Request</h1>
-            {/* Import Email Send a Request */}
+            Import Email Send a Request
             <EmailForm />
-        </div>
+        </div> */}
     </>
   )
 }

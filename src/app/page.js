@@ -70,24 +70,24 @@ export async function getHomeQuery(){
 	const homeQuery = await client.fetch(
 		`{
 			"products": *[_type == "products"] | order(_createdAt desc){
-					_id,
-					name,
-					"slug": slug.current,
-					"thumbPic": thumbPic.asset->url,
-				}[0...10],
+				_id,
+				name,
+				"slug": slug.current,
+				"thumbPic": thumbPic.asset->url,
+			}[0...10],
 			"homeCarouselPics": *[_type == "homeCarouselPics"]{
-					_id,
-					name,
-					"pics": pic.asset->url,
-				},
+				_id,
+				name,
+				"pics": pic.asset->url,
+			},
 			"packageLists": *[_type == "packages"] | order(_createdAt desc){
-					"key": _id,
-					name,
-					"slug": slug.current,
-					"thumbPic": thumbPic.asset->url,
-					description,
-					"inclusionsCount": count(inclusions),
-				}[0...6]
+				"key": _id,
+				name,
+				"slug": slug.current,
+				"thumbPic": thumbPic.asset->url,
+				description,
+				"inclusionsCount": count(inclusions),
+			}[0...6]
 		}`
 	);
 	return homeQuery

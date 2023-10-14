@@ -70,19 +70,19 @@ function Pagination({ queryNums, defaultSlice }) {
 			<div className={styles.pageNums}>
 				{pageNums.map((pageNum) => {
 					return(
-							pageNum == page ? 
+						pageNum == page ? 
+						<div 
+							className={styles.page}
+							style={{backgroundColor: '#62A388', color: 'white'}}
+						>
+							{pageNum}
+						</div> :
 							<div 
 								className={styles.page}
-								style={{backgroundColor: '#62A388', color: 'white'}}
+								onClick={() => handlePageBtn(pageNum)}
 							>
 								{pageNum}
-							</div> :
-								<div 
-									className={styles.page}
-									onClick={() => handlePageBtn(pageNum)}
-								>
-									{pageNum}
-								</div>
+							</div>
 					);
 				})}
 			</div>

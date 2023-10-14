@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/EmailForm.module.scss'
+import styles from '@/styles/EmailForm.module.scss'
 import { roboto300 } from '@/app/fonts'
 
 function EmailForm() {

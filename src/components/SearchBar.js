@@ -67,15 +67,15 @@ function SearchBar() {
 		const pushURL = (
 			// If Search is not empty and Category is set to any
 			inputSearch !=='' && inputCategory =='any' ? 
-				`/pages/ProductsPage?search=${encodedInputSearch}` :
+				`/Products?search=${encodedInputSearch}` :
 			// If Search is empty and Category is Selected
 			inputSearch =='' && inputCategory !=='any' ? 
-				`/pages/ProductsPage?category=${inputCategory}` :
+				`/Products?category=${inputCategory}` :
 			// If both is used
 			inputSearch !=='' && inputCategory !=='any' ? 
-				`/pages/ProductsPage?search=${encodedInputSearch}&category=${inputCategory}` : 
+				`/Products?search=${encodedInputSearch}&category=${inputCategory}` : 
 			// If both is empty
-			`/pages/ProductsPage`
+			`/Products`
 		);
 		router.push(pushURL);
 	}

@@ -23,12 +23,14 @@
 }
 .headlineBodyImgContiainer{
 	flex: 1;
+	position: relative;
+	aspect-ratio: 3 / 2;
+	height: fit-content;
 }
-.headlineBodyImg{
-	border-radius: 1rem;
-	height: auto;
-	width: 100%;
-}
+// .headlineBodyImg{
+// 	border-radius: 1rem;
+// 	object-fit: contain;
+// }
 
 .newArrivalsContainer{
 	background-color: $backgroundWhite;

@@ -10,8 +10,8 @@
 	align-items: center;
 }
 
-.Footer p{
-	font-size: 12px;
+.Footer h1{
+	font-size: x-small;
 	color: white;
 }
 
@@ -21,6 +21,15 @@
 
 .Socials{
 	color: $BlueWhite;
-	font-size: 12px;
+	font-size: small;
     margin-left: 3px;
+}
+
+@media only screen and (max-width: 480px) {
+	.Footer h1{
+        font-size: xx-small;
+    }
+	.Socials{
+		font-size: x-small;
+	}
 }

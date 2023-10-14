@@ -20,8 +20,8 @@ function SearchBarPackageList() {
 		const encodedInputSearch = encodeURI(inputSearch);
 		const pushURL = (
 			inputSearch !=='' ? 
-				`/pages/Packages?search=${encodedInputSearch}` :
-					`/pages/Packages`	
+				`/Packages?search=${encodedInputSearch}` :
+					`/Packages`	
 		);
 		router.push(pushURL);
 	}

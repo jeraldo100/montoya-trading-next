@@ -18,6 +18,27 @@ async function PackageInfoPage({ params }) {
 	)
 }
 
+// Generate Metadata for packages
+export async function generateMetadata({ params }){
+	const pack = await client.fetch(
+		`*[_type == "packages" && slug.current == '${ params.slug }']{
+			name,
+			description,
+		}[0]`
+	);
+	const name = `${pack.name}|Montoya Trading`;
+	const description = pack.description.slice(0, 160);
+	return {
+		title: name,
+		description: description,
+		openGraph: {
+			title: name,
+			description: description,
+			url: `https://montoya-trading-next.vercel.app/Packages/${ params.slug }`,
+		}
+	}
+}
+
 //Statically generate routes at build time instead of on-demand at request time
 export async function generateStaticParams() {
 	const query = `*[_type == "Package"]{
@@ -46,7 +67,6 @@ export async function GetPackageInfo( params ){
 			"thumbPic": thumbPic.asset->url,
 		}
     }[0]`;
-    
     const pack = await client.fetch(query);
   
     return pack

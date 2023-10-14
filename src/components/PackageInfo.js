@@ -12,18 +12,16 @@ function PackageInfo({ name, thumbPic, description, inclusions }) {
 			<div className={styles.imgAndInfo}>
 				{/* image Container */}
 				<div className={styles.imgContainer}>
-					<img className={styles.image} src={thumbPic}/>
+					<img className={styles.image} src={ thumbPic }/>
 				</div>
 				{/* Name and Description Container as flex collumn */}
 				<div className={styles.infoContainer}>
 					<div className={`${styles.name} ${roboto700.className}`}>
-						<p>
-							{name}
-						</p>
+						<h1>{ name }</h1>
 					</div>
 
 					<pre className={`${styles.description} ${roboto300.className}`}>
-						{description}
+						{ description }
 					</pre>
 				</div>
 			</div>
@@ -32,7 +30,7 @@ function PackageInfo({ name, thumbPic, description, inclusions }) {
 				Inclusions:
 			</p>
 			<HorizontalProductsContainer 
-				products={inclusions}
+				products={ inclusions }
 			/>
 		</div>
 	</>

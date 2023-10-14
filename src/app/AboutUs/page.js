@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../../styles/PagesCSS/AboutUs.module.scss';
+import styles from '@/styles/PagesCSS/AboutUs.module.scss';
 import { roboto300, roboto700 } from '@/app/fonts';
 
 function AboutUs() {

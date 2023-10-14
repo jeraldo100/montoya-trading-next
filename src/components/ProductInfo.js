@@ -10,32 +10,32 @@ function ProductInfo({ product }) {
                 {/* Container for image product info for flexbox direction row */}
                 <div className={styles.layer1}>
                     <div className={styles.imageContainer}>
-                        <img className={styles.image} src={product.thumbPic} />
+                        <img className={styles.image} src={ product.thumbPic } />
                     </div>
                     {/* Container for product info only for flexbox direction collumn */}
                     <div className={styles.layer2}>
                         <h1 className={`${styles.prodName} ${roboto700.className}`}>
-                            {product.name}
+                            { product.name }
                         </h1>
                         <h2 className={`${styles.prodBrand} ${roboto500.className}`}>
                             Brand:
                             <span> </span>
                             <span className={roboto300.className}>
-                                {product.brand}
+                                { product.brand }
                             </span>
                         </h2>
                         {/* Convert Schema of description to Block Type to make use of rich Text */}
-                        <h1 className={`${styles.descriptionH1} ${roboto500.className}`}>
+                        <h2 className={`${styles.descriptionH1} ${roboto500.className}`}>
                             Description:
-                        </h1>
+                        </h2>
                         <pre className={`${styles.description} ${roboto300.className}`}>
-                            {product.description}
+                            { product.description }
                         </pre>
                         {product.specs !== null || product.packagedIn !== undefined ?
                             <>
-                                <h1 className={`${styles.specsH1} ${roboto500.className}`}>
+                                <h3 className={`${styles.specsH1} ${roboto500.className}`}>
                                     Specifications:
-                                </h1>
+                                </h3>
                                 {/* Coulb be presented better with flexbox */}
                                 <div className={styles.specs}>
                                     {product.specs.map((spec) => {
@@ -43,11 +43,11 @@ function ProductInfo({ product }) {
                                             <>
                                                 <p>
                                                     <span className={roboto500.className}>
-                                                        {spec?.specType}:
+                                                        { spec?.specType }:
                                                     </span>
                                                     <span> </span>
                                                     <span className={roboto300.className}>
-                                                        {spec?.specVal}
+                                                        { spec?.specVal }
                                                     </span>
                                                 </p>
                                                 <hr/>
@@ -63,20 +63,20 @@ function ProductInfo({ product }) {
                 </div>
                 {product.packagedIn.length !== 0  ?
                     <>
-                        <h1 className={`${styles.packagesHeader} ${roboto500.className}`}>
+                        <h2 className={`${styles.packagesHeader} ${roboto500.className}`}>
                             Also Included in these packages:
-                        </h1>
+                        </h2>
                         <div className={styles.packageList}>
                             {product.packagedIn.map((pack) => {
                                 return (
                                     <>
                                         <PackageCard
-                                            key={pack.key}
-                                            name={pack.name}
-                                            slug={pack.slug}
-                                            thumbPic={pack.thumbPic}
-                                            description={pack.description}
-                                            inclusionsCount={pack.inclusionsCount}
+                                            key={ pack.key }
+                                            name={ pack.name }
+                                            slug={ pack.slug }
+                                            thumbPic={ pack.thumbPic }
+                                            description={ pack.description }
+                                            inclusionsCount={ pack.inclusionsCount }
                                         />
                                     </>
                                 );

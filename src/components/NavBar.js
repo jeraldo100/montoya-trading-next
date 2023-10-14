@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import styles from '../styles/NavBar.module.scss'
+import styles from '@/styles/NavBar.module.scss'
 import { useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { roboto300, roboto700 } from '@/app/fonts'
@@ -24,12 +24,12 @@ function NavBar() {
 					</Link>
 					<div className={styles.desktopOptions}>
 						<Link 
-							href="/pages/ProductsPage" 
+							href="/Products" 
 							className={`${styles.NavLinks} ${roboto300.className}`}>
 								Products <BsFillBoxSeamFill className={styles.NavLinksIcons} />
 						</Link>
 						<Link 
-							href="/pages/Packages" 
+							href="/Packages" 
 							className={`${styles.NavLinks} ${roboto300.className}`}>
 								Packages <FaBoxes className={styles.NavLinksIcons} />
 						</Link>
@@ -47,12 +47,12 @@ function NavBar() {
 				<div className={styles.NavEnd}>
 					<div className={styles.desktopOptions}>
 						<Link 
-							href="/pages/AboutUs" 
+							href="/AboutUs" 
 							className={`${styles.NavLinks} ${roboto300.className}`}>
 								About Us <BiSolidInfoCircle className={styles.NavLinksIcons} />
 						</Link>
 						<Link 
-							href="/pages/ContactUs" 
+							href="/ContactUs" 
 							className={`${styles.NavLinks} ${roboto300.className}`}>
 								Contact Us <BiSolidEnvelope className={styles.NavLinksIcons} />
 						</Link>
@@ -79,12 +79,12 @@ function NavBar() {
 							</div>
 							<div className={styles.offCanvasNav}>
 								<Link 
-									href="/pages/ProductsPage" 
+									href="/Products" 
 									className={`${styles.NavLinks} ${roboto300.className}`}>
 										Products <BsFillBoxSeamFill className={styles.NavLinksIcons} />
 								</Link>
 								<Link 
-									href="/pages/Packages" 
+									href="/Packages" 
 									className={`${styles.NavLinks} ${roboto300.className}`}>
 										Packages <FaBoxes className={styles.NavLinksIcons} />
 								</Link>
@@ -98,12 +98,12 @@ function NavBar() {
 									</div>
 								</a>
 								<Link 
-									href="/pages/AboutUs" 
+									href="/AboutUs" 
 									className={`${styles.NavLinks} ${roboto300.className}`}>
 										About Us <BiSolidInfoCircle className={styles.NavLinksIcons} />
 								</Link>
 								<Link 
-									href="/pages/ContactUs" 
+									href="/ContactUs" 
 									className={`${styles.NavLinks} ${roboto300.className}`}>
 										Contact Us <BiSolidEnvelope className={styles.NavLinksIcons} />
 								</Link>

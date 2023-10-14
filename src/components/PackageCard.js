@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from '../styles/PackageCard.module.scss'
+import styles from '@/styles/PackageCard.module.scss'
 import { roboto300, roboto700 } from '@/app/fonts'
 
 function PackageCard( { key, name, slug, thumbPic, description, inclusionsCount } ) {
@@ -16,9 +16,9 @@ function PackageCard( { key, name, slug, thumbPic, description, inclusionsCount 
 				</div>
 				{/* Name Description Inclusion-Number and Button Container */}
 				<div className={styles.infoContainer}>
-					<div className={`${roboto700.className} ${styles.name}`}>
-						<p>{ name }</p>
-					</div>
+					<h1 className={`${roboto700.className} ${styles.name}`}>
+						{ name }
+					</h1>
 					<div className={styles.descContainer}>
 						<pre className={`${styles.description} ${roboto300.className}`}>{ description }</pre>
 					</div>
@@ -27,7 +27,7 @@ function PackageCard( { key, name, slug, thumbPic, description, inclusionsCount 
 						<div className={`${styles.totalItems} ${roboto300.className}`}>
 							INCLUSIONS: { inclusionsCount }
 						</div>
-						<Link href={`/pages/Packages/${slug}`} style={{ textDecoration: 'none' }}>
+						<Link href={`/Packages/${slug}`} style={{ textDecoration: 'none' }}>
 							<div className={`${styles.detailsBtn} ${roboto300.className}`}>
 								DETAILS
 							</div>

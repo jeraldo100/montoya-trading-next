@@ -1,10 +1,9 @@
 'use client'
 import React from 'react'
-import styles from '../styles/HomeCarousel.module.scss';
+import styles from '@/styles/HomeCarousel.module.scss';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { BiSolidChevronsLeft } from "react-icons/bi";
-import { BiSolidChevronsRight } from "react-icons/bi";
+import { BiSolidChevronsLeft, BiSolidChevronsRight } from "react-icons/bi";
 
 
 function HomeCarousel({homeCarouselPics}) {

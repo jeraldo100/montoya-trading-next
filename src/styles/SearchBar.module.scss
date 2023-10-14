@@ -58,7 +58,7 @@
 .categoryBtn{
 	width: fit-content;
 	padding: 0.6em;
-	text-wrap: nowrap;
+	white-space: nowrap;
 	color: white;
 	background-color: $BlueGreen;
 	border: 1px solid $BlueGreen;
@@ -136,5 +136,8 @@
 	}
 	.category{
 		font-size: xx-small;
+	}
+	.btnIcon{
+		top: 1px;
 	}
 }

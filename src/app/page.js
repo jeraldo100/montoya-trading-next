@@ -2,6 +2,7 @@ import './globals.scss'
 import styles from '@/styles/PagesCSS/Home.module.scss'
 import client from '@/components/sanity.client';
 import Link from 'next/link'
+import Image from 'next/image';
 import HomeCarousel from '@/components/HomeCarousel'
 import HorizontalProductsContainer from '@/components/HorizontalProductsContainer';
 import PackageCardsContainer from '@/components/PackageCardsContainer';
@@ -18,25 +19,32 @@ async function Home() {
 			/>
 			{/* Headline Conatainer */}
 			<div className={styles.headline}>
-				<div className={`${styles.headlineHeader} ${roboto700.className}`}>
-					The Best Provider for POS system goods in the Philippines
-				</div>
+				<h1 className={`${styles.headlineHeader} ${roboto700.className}`}>
+					The Best Retailer for POS System goods in the Philippines
+				</h1>
 				<br />
 				<div className={`${styles.headlineBody} ${roboto300.className}`}>
 					<div className={styles.headlineBodyText}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nisl sem, congue vel lacus sit amet, cursus imperdiet ligula. Vestibulum id augue vel augue vestibulum dignissim. Mauris interdum justo in augue lacinia, a finibus metus porta. Phasellus sem felis, porttitor sit amet arcu vel, luctus finibus nibh. Phasellus ultrices congue congue. Proin hendrerit fringilla libero eu pharetra. Aliquam turpis tellus, tincidunt sed velit non, suscipit elementum est. Sed iaculis, ligula vitae lobortis feugiat, magna elit bibendum turpis, quis tincidunt augue justo sed lorem. Integer sit amet nunc malesuada, aliquam nulla sed, placerat ante. Pellentesque vestibulum sit amet nibh sit amet congue. Aliquam laoreet, magna sit amet accumsan consequat, lacus nulla ornare dui, et molestie enim mi non augue. In mollis ante auctor ex feugiat, sed dapibus neque finibus. Mauris varius tincidunt purus, sed semper erat. Donec malesuada nunc sed felis suscipit molestie.
 					</div>
 					<div className={styles.headlineBodyImgContiainer}>
-						<img className={styles.headlineBodyImg} src='/close-up-baker-bakery-shop.jpg' alt='POS system setup' />
+						<Image 
+							className={styles.headlineBodyImg} 
+							fill={true}
+							src='/close-up-baker-bakery-shop.jpg' 
+							style={{objectFit: "contain", borderRadius: '1rem'}}
+							quality={50}
+							alt='POS system setup Image by Freepik' 
+						/>
 					</div>
 				</div>
 			</div>
 			{/* New Arrivals of products Container only displays 10 newest items  */}
 			<div className={styles.newArrivalsContainer}>
 				<div className={styles.selectionHeader}>
-					<h1 className={`${styles.selectionHeaderText} ${roboto500.className}`}>New Arrivals</h1>
+					<h2 className={`${styles.selectionHeaderText} ${roboto500.className}`}>New Arrivals</h2>
 					<Link 
-						href="/pages/ProductsPage" 
+						href="/Products" 
 						className={`${styles.viewMore} ${roboto300.className}`}>
 							View More <BiSolidChevronsRight className={styles.icons} />
 					</Link>
@@ -49,9 +57,9 @@ async function Home() {
 			{/* Preview of packages Container only displays 6 newest items  */}
 			<div className={styles.packagesContainer}>
 				<div className={styles.selectionHeader}>
-					<h1 className={`${styles.selectionHeaderText} ${roboto500.className}`}>Check out our Packages</h1>
+					<h2 className={`${styles.selectionHeaderText} ${roboto500.className}`}>Check out our Packages</h2>
 					<Link 
-						href="/pages/Packages" 
+						href="/Packages" 
 						className={`${styles.viewMore} ${roboto300.className}`}>
 							View More <BiSolidChevronsRight className={styles.icons} />
 					</Link>

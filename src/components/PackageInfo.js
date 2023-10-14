@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '@/styles/PackageInfo.module.scss'
 import HorizontalProductsContainer from './HorizontalProductsContainer'
+import ShareBtn from './ShareBtn'
 import { roboto300, roboto700 } from '@/app/fonts'
 
 function PackageInfo({ name, thumbPic, description, inclusions }) {
@@ -19,7 +20,7 @@ function PackageInfo({ name, thumbPic, description, inclusions }) {
 					<div className={`${styles.name} ${roboto700.className}`}>
 						<h1>{ name }</h1>
 					</div>
-
+					<ShareBtn />
 					<pre className={`${styles.description} ${roboto300.className}`}>
 						{ description }
 					</pre>

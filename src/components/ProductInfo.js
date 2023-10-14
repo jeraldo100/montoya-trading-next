@@ -1,6 +1,8 @@
+'use client'
 import React from 'react'
 import styles from '../styles/ProductInfo.module.scss'
 import PackageCard from './PackageCard';
+import ShareBtn from './ShareBtn';
 import { roboto300, roboto500, roboto700 } from '@/app/fonts';
 
 function ProductInfo({ product }) {
@@ -24,6 +26,7 @@ function ProductInfo({ product }) {
                                 { product.brand }
                             </span>
                         </h2>
+                        <ShareBtn />
                         {/* Convert Schema of description to Block Type to make use of rich Text */}
                         <h2 className={`${styles.descriptionH1} ${roboto500.className}`}>
                             Description:

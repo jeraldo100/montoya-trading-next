@@ -16,6 +16,9 @@
 
 .imgContainer{
 	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
 }
 
 .image{
@@ -37,6 +40,10 @@
 	color: $BlueGreen;
 }
 
+.descH2{
+	font-size: large;
+    margin-top: 0.6em;
+}
 .description{
 	font-size: medium;
 	white-space: pre-wrap;
@@ -77,6 +84,9 @@
 	.name{
 		font-size: medium;
 	}
+	.descH2{
+		font-size: medium;
+	}
 	.description{
 		font-size: x-small;
 	}
@@ -86,6 +96,9 @@
 }
 @media only screen and (max-width: 480px) {
 	.name{
+		font-size: small;
+	}
+	.descH2{
 		font-size: small;
 	}
 	.description{

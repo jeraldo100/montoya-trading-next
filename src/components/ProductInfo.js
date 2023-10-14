@@ -26,7 +26,6 @@ function ProductInfo({ product }) {
                                 { product.brand }
                             </span>
                         </h2>
-                        <ShareBtn />
                         {/* Convert Schema of description to Block Type to make use of rich Text */}
                         <h2 className={`${styles.descriptionH1} ${roboto500.className}`}>
                             Description:
@@ -34,6 +33,7 @@ function ProductInfo({ product }) {
                         <pre className={`${styles.description} ${roboto300.className}`}>
                             { product.description }
                         </pre>
+                        <ShareBtn />
                         {product.specs !== null || product.packagedIn !== undefined ?
                             <>
                                 <h3 className={`${styles.specsH1} ${roboto500.className}`}>

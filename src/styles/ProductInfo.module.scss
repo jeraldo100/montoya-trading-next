@@ -26,6 +26,7 @@
     display: flex;
     flex: 2;
     flex-direction: column;
+    gap: 0.8em;
     margin-left: 1.5em;
 }
 
@@ -33,26 +34,24 @@
 	font-size: xx-large;
     color: $BlueGreen;
 }
+
 .prodBrand{
 	font-size: x-large;
-    margin-top: 0.4em;
 }
+
 .descriptionH1{
     font-size: large;
-    margin-top: 0.6em;
 }
 .description{
     font-size: medium;
-    margin-top: 0.4em;
     white-space: pre-wrap;
 }
+
 .specsH1{
     font-size: large;
-    margin-top: 0.6em;
 }
 .specs{
     font-size: medium;
-    margin-top: 0.4em;
 }
 
 .packagesHeader{
@@ -60,7 +59,6 @@
     color: $Blue;
     margin: 1em 0 1em 0;
 }
-
 .packageList{
     display: grid;
 	grid-template-columns: repeat(2, 1fr);

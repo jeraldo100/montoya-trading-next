@@ -6,15 +6,25 @@ import ProductsContainer from '@/components/ProductsContainer';
 import Pagination from '@/components/Pagination';
 import NotFound from '@/components/NotFound';
 
-async function ProductsPage({ searchParams }) {
-	const search = searchParams.search ? searchParams.search : '';
-	const category = searchParams.category ? searchParams.category : 'any';
-	const page = searchParams.page ? Number(searchParams.page) : 1;
+interface Products{
+	productNums: number
+	productsList: {
+		_id: string
+		name: string
+		slug: string
+		thumbPic: string
+	}
+}
 
-	const defaultSlice = 16;
-	const itemEnd = page * defaultSlice;
-	const itemStart = itemEnd - defaultSlice;
-	const pageSlice = `[${itemStart}...${itemEnd}]`;
+async function ProductsPage({ searchParams }) {
+	const search: string = searchParams.search ? searchParams.search : '';
+	const category: string = searchParams.category ? searchParams.category : 'any';
+	const page: number = searchParams.page ? Number(searchParams.page) : 1;
+
+	const defaultSlice: number = 16;
+	const itemEnd: number = page * defaultSlice;
+	const itemStart: number = itemEnd - defaultSlice;
+	const pageSlice: string = `[${itemStart}...${itemEnd}]`;
 
 	const query = (
 		search == '' && category == 'any' ?
@@ -27,7 +37,7 @@ async function ProductsPage({ searchParams }) {
 	);
 
 	// const productNums = await GetProductsNums(query);
-	const products = await GetProducts(query, pageSlice);
+	const products: Products = await GetProducts(query, pageSlice);
 	
 	return (
 	<>	

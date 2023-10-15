@@ -14,6 +14,7 @@ function ProductsContainer({ products }) {
                                 name={product.name}
                                 thumbPic={product.thumbPic}
                                 slug={product.slug}
+                                setWidth={false}
                             />
                         </>
                     );

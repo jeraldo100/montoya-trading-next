@@ -9,13 +9,36 @@ import PackageCardsContainer from '@/components/PackageCardsContainer';
 import { roboto300, roboto500, roboto700 } from './fonts';
 import { BiSolidChevronsRight } from "react-icons/bi";
 
+interface Products{
+	_id: string
+	name: string
+	slug: string
+	thumbPic: string
+}
+interface HomeCarouselPics{
+	_id: string
+	name: string
+	pics: string
+}
+interface PackageLists{
+	_id: string
+	name: string
+	slug: string
+	thumbPic: string
+	description: string
+	inclusionsCount: number
+}
+
 async function Home() {
 	const homeQuery = await getHomeQuery()
+	const products: Products = homeQuery.products;
+	const homeCarouselPics: HomeCarouselPics = homeQuery.homeCarouselPics;
+	const packageLists: PackageLists = homeQuery.packageLists;
 
 	return (
 		<main>
 			<HomeCarousel 
-				homeCarouselPics={homeQuery.homeCarouselPics}
+				homeCarouselPics={ homeCarouselPics }
 			/>
 			{/* Headline Conatainer */}
 			<div className={styles.headline}>
@@ -51,7 +74,7 @@ async function Home() {
 				</div>
 				
 				<HorizontalProductsContainer 
-					products={homeQuery.products}
+					products={ products }
 				/>
 			</div>
 			{/* Preview of packages Container only displays 6 newest items  */}
@@ -66,7 +89,7 @@ async function Home() {
 				</div>
 				
 				<PackageCardsContainer 
-					packageLists={homeQuery.packageLists}
+					packageLists={ packageLists }
 				/>
 			</div>
 		</main>
@@ -89,7 +112,7 @@ export async function getHomeQuery(){
 				"pics": pic.asset->url,
 			},
 			"packageLists": *[_type == "packages"] | order(_createdAt desc){
-				"key": _id,
+				_id,
 				name,
 				"slug": slug.current,
 				"thumbPic": thumbPic.asset->url,

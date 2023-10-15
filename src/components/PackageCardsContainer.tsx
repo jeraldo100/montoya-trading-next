@@ -9,7 +9,7 @@ function PackageCardsContainer({ packageLists }) {
 				return(
 					<>
 						<PackageCard
-							key={packageList.key}
+							key={packageList._id}
 							name={packageList.name}
 							slug={packageList.slug}
 							thumbPic={packageList.thumbPic}

@@ -26,7 +26,7 @@ function Pagination({ queryNums, defaultSlice }) {
 		router.push(`${pathname}?${pageParams.toString()}`)
 	}
 	const handleLastBtn = () => {
-		pageParams.set('page', lastPage);
+		pageParams.set('page', String(lastPage));
 		router.push(`${pathname}?${pageParams.toString()}`)
 	}
 

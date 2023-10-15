@@ -1,11 +1,27 @@
-'use client'
 import React from 'react'
 import styles from '../styles/ProductInfo.module.scss'
 import PackageCard from './PackageCard';
 import ShareBtn from './ShareBtn';
 import { roboto300, roboto500, roboto700 } from '@/app/fonts';
 
-function ProductInfo({ product }) {
+interface Product{
+    _id: string
+	name: string
+	thumbPic: string
+	brand: string
+	description: string
+	specs?: { specType?: string, specVal?: string }[]
+	packagedIn:{
+		_id: string
+		name: string
+		slug: string
+		thumbPic: string
+		description: string
+		inclusionsCount: number
+	}[]
+}
+
+function ProductInfo({ product }: { product: Product }) {
     return (
         <>
             <div className={styles.productContainer}>
@@ -74,7 +90,7 @@ function ProductInfo({ product }) {
                                 return (
                                     <>
                                         <PackageCard
-                                            key={ pack.key }
+                                            key={ pack._id }
                                             name={ pack.name }
                                             slug={ pack.slug }
                                             thumbPic={ pack.thumbPic }

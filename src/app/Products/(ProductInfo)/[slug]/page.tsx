@@ -2,26 +2,42 @@ import React from 'react'
 import client from '@/components/sanity.client';
 import ProductInfo from '@/components/ProductInfo';
 
-async function ProductPage({ params }) {
- 	const product = await GetProductInfo( params )
-	const jsonLd = {
-		'@context': 'https://schema.org',
-		'@type': 'Product',
-		name: product.name,
-		image: product.thumbPic,
-		description: product.description
-	};
-  return (
-      <>
+interface Product {
+	_id: string
+	name: string
+	thumbPic: string
+	brand: string
+	description: string
+	specs?: { specType?: string, specVal?: string }[]
+	packagedIn:{
+		_id: string
+		name: string
+		slug: string
+		thumbPic: string
+		description: string
+		inclusionsCount: number
+	}[]
+}
+
+async function ProductPage({ params }: { params: { slug: string } }) {
+ 	const product: Product = await GetProductInfo( params )
+	// const jsonLd = {
+	// 	'@context': 'https://schema.org',
+	// 	'@type': 'Product',
+	// 	name: product.name,
+	// 	image: product.thumbPic,
+	// 	description: product.description
+	// };
+  	return (
+     	<>
 			<ProductInfo 
 				product = {product}
 			/>
-			<section>
-				{/* Structured data for SEO */}
-				<script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-			</section>
-      </>
-  )
+			{/* <section>
+				<script type="application/ld+json">{JSON.stringify( jsonLd )}</script>
+			</section> */}
+    	</>
+  	)
 }
 
 // Generate Metadata for products
@@ -35,7 +51,6 @@ export async function generateMetadata({ params }){
 	);
 	const productName = `${product.name}|Montoya Trading`;
 	const productDescription = product.description.slice(0, 160);
-	const productImg = `${product.thumbpic}?q=25`
 	return {
 		title: productName,
 		description: productDescription,
@@ -62,7 +77,7 @@ export async function generateStaticParams() {
 }
  
 // Fetching Data of product from Sanity 
-export async function GetProductInfo( params ){
+export async function GetProductInfo( params: { slug: string }  ){
     const product = await client.fetch(
 		`*[_type == "products" && slug.current == '${ params.slug }']{
 			_id,
@@ -72,7 +87,7 @@ export async function GetProductInfo( params ){
 			description,
 			"specs": specs[]{specType, specVal},
 			"packagedIn": *[_type=='packages' && references(^._id)] | order(_createdAt desc){
-				"key": _id,
+				_id,
 				name,
 				"slug": slug.current,
 				"thumbPic": thumbPic.asset->url,

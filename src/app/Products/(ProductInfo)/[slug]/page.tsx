@@ -20,7 +20,7 @@ interface Product {
 }
 
 async function ProductPage({ params }: { params: { slug: string } }) {
- 	const product: Product = await GetProductInfo( params )
+	const product: Product = await GetProductInfo( params )
 	// const jsonLd = {
 	// 	'@context': 'https://schema.org',
 	// 	'@type': 'Product',
@@ -28,16 +28,16 @@ async function ProductPage({ params }: { params: { slug: string } }) {
 	// 	image: product.thumbPic,
 	// 	description: product.description
 	// };
-  	return (
-     	<>
+	return (
+		<>
 			<ProductInfo 
 				product = {product}
 			/>
 			{/* <section>
 				<script type="application/ld+json">{JSON.stringify( jsonLd )}</script>
 			</section> */}
-    	</>
-  	)
+		</>
+	)
 }
 
 // Generate Metadata for products
@@ -77,7 +77,7 @@ export async function generateStaticParams() {
 }
  
 // Fetching Data of product from Sanity 
-export async function GetProductInfo( params: { slug: string }  ){
+async function GetProductInfo( params: { slug: string }  ){
     const product = await client.fetch(
 		`*[_type == "products" && slug.current == '${ params.slug }']{
 			_id,

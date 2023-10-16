@@ -97,7 +97,7 @@ async function Home() {
 }
 
 //All Queries from Sanity
-export async function getHomeQuery(){
+async function getHomeQuery(){
 	const homeQuery = await client.fetch(
 		`{
 			"products": *[_type == "products"] | order(_createdAt desc){

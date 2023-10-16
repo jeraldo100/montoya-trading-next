@@ -9,7 +9,7 @@ function NotFound() {
 		<div className={styles.notFound}>
 			<BiConfused className={styles.icon} />
 			<h1 className={`${styles.text} ${roboto300.className}`}>
-				Sorry we can't find what you are looking for.
+				Sorry we can&apos;t find what you are looking for.
 			</h1>
 		</div>
 	</>

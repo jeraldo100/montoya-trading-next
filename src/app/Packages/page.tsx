@@ -47,7 +47,7 @@ async function PackageList({ searchParams }) {
 	)
 }
 
-export async function GetPackagelist(query, pageSlice){
+async function GetPackagelist(query, pageSlice){
     const packs = await client.fetch( 
 		`{
 			"packageNums": count(${query}),

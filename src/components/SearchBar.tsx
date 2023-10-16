@@ -11,8 +11,8 @@ function SearchBar() {
 	const searchParams = useSearchParams()
 	
 	// Get Initial search and category values from URL
-  	const search = searchParams.get('search') ? searchParams.get('search') : ""; 
-  	const category = searchParams.get('category') ? searchParams.get('category') : "any";
+	const search = searchParams.get('search') ? searchParams.get('search') : ""; 
+	const category = searchParams.get('category') ? searchParams.get('category') : "any";
 
 	const [inputSearch, setInputSearch] = useState(search);
 	const [inputCategory, setInputCategory] = useState(category);

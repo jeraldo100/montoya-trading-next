@@ -19,7 +19,7 @@ async function PackageInfoPage({ params }) {
 }
 
 // Generate Metadata for packages
-async function generateMetadata({ params }){
+export async function generateMetadata({ params }){
 	const pack = await client.fetch(
 		`*[_type == "packages" && slug.current == '${ params.slug }']{
 			name,
@@ -40,7 +40,7 @@ async function generateMetadata({ params }){
 }
 
 //Statically generate routes at build time instead of on-demand at request time
-async function generateStaticParams() {
+export async function generateStaticParams() {
 	const query = `*[_type == "Package"]{
 		slug {
 			current

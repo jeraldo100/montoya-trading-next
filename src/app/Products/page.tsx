@@ -64,7 +64,7 @@ async function ProductsPage({ searchParams }) {
 }
   
 //Getting product list and number of products  Query
-export async function GetProducts(query, pageSlice){
+async function GetProducts(query, pageSlice){
 	const products = await client.fetch(
 		`{
 			"productNums": count(${query}),

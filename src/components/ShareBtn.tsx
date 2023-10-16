@@ -23,7 +23,7 @@ import { BiShareAlt } from "react-icons/bi";
 
 function ShareBtn() {
 	const pathname = usePathname()
-  	return (
+	return (
 	<div className={styles.shareBtnContainer}>
 		<h3 className={`${styles.shareH3} ${roboto500.className}`}>
 			Share <BiShareAlt style={{position:'relative', top: '2px'}} />:
@@ -68,7 +68,7 @@ function ShareBtn() {
 			</LinkedinShareButton>
 		</div>
 	</div>
-  	)
+	)
 }
 
 export default ShareBtn

@@ -8,6 +8,7 @@ export const contentType = 'image/png'
 export default async function Image({ params }) {
   const image = await client.fetch(
 		`*[_type == "products" && slug.current == '${ params.slug }']{
+			name,
 			"thumbPic": thumbPic.asset->url,
 		}[0]`
 	);
@@ -29,6 +30,7 @@ export default async function Image({ params }) {
 					height={600}
 					width={600}
 					src={`${image.thumbPic}?q=25`}
+					alt={image.name}
 				/>
 				<h1></h1>
 			</div>

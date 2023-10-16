@@ -11,7 +11,7 @@ function SearchBarPackageList() {
 	const searchParams = useSearchParams()
 
 	// Get Initial search value from URL
-  	const search = searchParams.get('search') ? searchParams.get('search') : ""; 
+	const search = searchParams.get('search') ? searchParams.get('search') : ""; 
 	const [inputSearch, setInputSearch] = useState(search);
 
 	// Search Button Handle

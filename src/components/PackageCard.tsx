@@ -12,7 +12,7 @@ function PackageCard( { key, name, slug, thumbPic, description, inclusionsCount 
 			>
 				{/* Image Container */}
 				<div className={styles.imgContainer}>
-					<img className={styles.image} src={`${thumbPic}?q=40`} />
+					<img className={styles.image} src={`${thumbPic}?q=40`} alt={name} />
 				</div>
 				{/* Name Description Inclusion-Number and Button Container */}
 				<div className={styles.infoContainer}>

@@ -28,7 +28,7 @@ function ProductInfo({ product }: { product: Product }) {
                 {/* Container for image product info for flexbox direction row */}
                 <div className={styles.layer1}>
                     <div className={styles.imageContainer}>
-                        <img className={styles.image} src={ product.thumbPic } />
+                        <img className={styles.image} src={ product.thumbPic } alt={ product.name } />
                     </div>
                     {/* Container for product info only for flexbox direction collumn */}
                     <div className={styles.layer2}>

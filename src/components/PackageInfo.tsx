@@ -13,7 +13,7 @@ function PackageInfo({ name, thumbPic, description, inclusions }) {
 			<div className={styles.imgAndInfo}>
 				{/* image and share button Container */}
 				<div className={styles.imgContainer}>
-					<img className={styles.image} src={ thumbPic }/>
+					<img className={styles.image} src={ thumbPic } alt={ name }/>
 				</div>
 				{/* Name and Description Container as flex collumn */}
 				<div className={styles.infoContainer}>

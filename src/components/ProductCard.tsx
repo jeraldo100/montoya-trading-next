@@ -13,7 +13,7 @@ function ProductCard({key, name, thumbPic, slug, setWidth}) {
                 {name}
             </div>
             <div className={styles.ProductCardBody}>
-                <img className={styles.productImg} src={`${ thumbPic }?q=25`} />
+                <img className={styles.productImg} src={`${ thumbPic }?q=25`} alt={ name } />
             </div>
           </div>
         </Link>

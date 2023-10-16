@@ -34,7 +34,7 @@ function HomeCarousel({homeCarouselPics}) {
                 >
                     {homeCarouselPics.map((Pic) => {return(
                         <div key={Pic._id}>
-                            <img className={styles.image} src={Pic.pics} />
+                            <img className={styles.image} src={Pic.pics} alt={Pic.name} />
                         </div>
                     )})}
                 </Carousel>

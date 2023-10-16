@@ -19,7 +19,7 @@ async function PackageInfoPage({ params }) {
 }
 
 // Generate Metadata for packages
-export async function generateMetadata({ params }){
+async function generateMetadata({ params }){
 	const pack = await client.fetch(
 		`*[_type == "packages" && slug.current == '${ params.slug }']{
 			name,
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }){
 }
 
 //Statically generate routes at build time instead of on-demand at request time
-export async function generateStaticParams() {
+async function generateStaticParams() {
 	const query = `*[_type == "Package"]{
 		slug {
 			current
@@ -54,7 +54,7 @@ export async function generateStaticParams() {
 }
 
 // Fetching Data of Package from Sanity 
-export async function GetPackageInfo( params ){
+async function GetPackageInfo( params ){
     const query = `*[_type == "packages" && slug.current == '${ params.slug }']{
 		"key": _id,
 		name,

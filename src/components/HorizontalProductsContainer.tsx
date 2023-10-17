@@ -1,19 +1,19 @@
 import React from 'react'
 import styles from '@/styles/HorizontalProductsContainer.module.scss'
+import { Products } from '@/app/interfaces'
 import ProductCard from './ProductCard'
 
-function HorizontalProductsContainer({ products }) {
+function HorizontalProductsContainer({ products } : { products : Array<Products>}) {
 	return (
 		<div className={styles.container}>
 			{products.map((product) => {
 				return(
-					<ProductCard 
-						key={product.key}
-						name={product.name}
-						thumbPic={product.thumbPic}
-						slug={product.slug}
-						setWidth={true}
-					/>
+					<>
+						<ProductCard
+							product={product}
+							setWidth={true}
+						/>
+					</>
 				)
 			})}
 		</div>

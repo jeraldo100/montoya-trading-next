@@ -1,55 +1,31 @@
 import React from 'react'
 import client from '@/components/sanity.client';
+import { Product } from '@/app/interfaces';
+import { groq } from "next-sanity";
 import ProductInfo from '@/components/ProductInfo';
-
-interface Product {
-	_id: string
-	name: string
-	thumbPic: string
-	brand: string
-	description: string
-	specs?: { specType?: string, specVal?: string }[]
-	packagedIn:{
-		_id: string
-		name: string
-		slug: string
-		thumbPic: string
-		description: string
-		inclusionsCount: number
-	}[]
-}
 
 async function ProductPage({ params }: { params: { slug: string } }) {
 	const product: Product = await GetProductInfo( params )
-	// const jsonLd = {
-	// 	'@context': 'https://schema.org',
-	// 	'@type': 'Product',
-	// 	name: product.name,
-	// 	image: product.thumbPic,
-	// 	description: product.description
-	// };
+
 	return (
 		<>
 			<ProductInfo 
 				product = {product}
 			/>
-			{/* <section>
-				<script type="application/ld+json">{JSON.stringify( jsonLd )}</script>
-			</section> */}
 		</>
 	)
 }
 
 // Generate Metadata for products
-export async function generateMetadata({ params }){
-	const product = await client.fetch(
-		`*[_type == "products" && slug.current == '${ params.slug }']{
+export async function generateMetadata({ params } : { params: { slug: string } }){
+	const product: Product = await client.fetch(
+		groq`*[_type == "products" && slug.current == '${ params.slug }']{
 			name,
 			description,
 			"thumbPic": thumbPic.asset->url,
 		}[0]`
 	);
-	const productName = `${product.name}|Montoya Trading`;
+	const productName = `${product.name} | Montoya Trading`;
 	const productDescription = product.description.slice(0, 160);
 	return {
 		title: productName,
@@ -62,9 +38,9 @@ export async function generateMetadata({ params }){
 	}
 }
 
-//Statically generate routes at build time instead of on-demand at request time
+// Statically generate routes at build time instead of on-demand at request time
 export async function generateStaticParams() {
-	const query = `*[_type == "products"]{
+	const query = groq`*[_type == "products"]{
 		slug {
 			current
 		}
@@ -78,8 +54,8 @@ export async function generateStaticParams() {
  
 // Fetching Data of product from Sanity 
 async function GetProductInfo( params: { slug: string }  ){
-    const product = await client.fetch(
-		`*[_type == "products" && slug.current == '${ params.slug }']{
+    const product: Product = await client.fetch(
+		groq`*[_type == "products" && slug.current == '${ params.slug }']{
 			_id,
 			name,
 			"thumbPic": thumbPic.asset->url,

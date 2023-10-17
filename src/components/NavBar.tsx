@@ -61,6 +61,7 @@ function NavBar() {
 						className={styles.offCanvasBtn} 
 						onClick={() => setShow(true)}
 					/>
+					{/* Off canvas page navigation with animation */}
 					<CSSTransition 
 						in={show} 
 						nodeRef={nodeRef}

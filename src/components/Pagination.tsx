@@ -5,7 +5,7 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { roboto300 } from '@/app/fonts'
 import { BiSolidChevronsLeft, BiSolidChevronsRight } from "react-icons/bi";
 
-function Pagination({ queryNums, defaultSlice }) {
+function Pagination({ queryNums, defaultSlice } : { queryNums : number, defaultSlice : number }) {
 
 	const router = useRouter();
 	const searchParams = useSearchParams();
@@ -30,7 +30,7 @@ function Pagination({ queryNums, defaultSlice }) {
 		router.push(`${pathname}?${pageParams.toString()}`)
 	}
 
-	const pageNums = [];
+	const pageNums: Array<number> = [];
 	if(lastPage <= 3){
 		for(let i = 1; i <= lastPage; i++) {
 			pageNums.push(i);

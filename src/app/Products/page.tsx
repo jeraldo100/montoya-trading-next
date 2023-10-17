@@ -1,30 +1,22 @@
 import React from 'react'
-import client from '@/components/sanity.client';
 import styles from '@/styles/PagesCSS/ProductsPage.module.scss'
+import client from '@/components/sanity.client';
+import { Products } from '../interfaces';
+import { groq } from 'next-sanity';
 import SearchBar from '@/components/SearchBar';
 import ProductsContainer from '@/components/ProductsContainer';
 import Pagination from '@/components/Pagination';
 import NotFound from '@/components/NotFound';
 
-interface Products{
-	productNums: number
-	productsList: {
-		_id: string
-		name: string
-		slug: string
-		thumbPic: string
-	}
-}
-
 async function ProductsPage({ searchParams }) {
-	const search: string = searchParams.search ? searchParams.search : '';
-	const category: string = searchParams.category ? searchParams.category : 'any';
-	const page: number = searchParams.page ? Number(searchParams.page) : 1;
+	const search = searchParams.search ? searchParams.search : '';
+	const category = searchParams.category ? searchParams.category : 'any';
+	const page = searchParams.page ? Number(searchParams.page) : 1;
 
-	const defaultSlice: number = 16;
-	const itemEnd: number = page * defaultSlice;
-	const itemStart: number = itemEnd - defaultSlice;
-	const pageSlice: string = `[${itemStart}...${itemEnd}]`;
+	const defaultSlice = 16;
+	const itemEnd = page * defaultSlice;
+	const itemStart = itemEnd - defaultSlice;
+	const pageSlice = `[${itemStart}...${itemEnd}]`;
 
 	const query = (
 		search == '' && category == 'any' ?
@@ -36,8 +28,8 @@ async function ProductsPage({ searchParams }) {
 		`*[_type == 'products' && name match '*${search}*' &&  category == '${category}']`
 	);
 
-	// const productNums = await GetProductsNums(query);
-	const products: Products = await GetProducts(query, pageSlice);
+	const products = await GetProducts(query, pageSlice);
+	const productsList: Array<Products> = products.productsList;
 	
 	return (
 	<>	
@@ -46,7 +38,7 @@ async function ProductsPage({ searchParams }) {
 			{products.productNums >= 1 ? 
 				<div className={styles.list}>
 					<ProductsContainer
-						products = {products.productsList}
+						products = {productsList}
 					/>
 					{products.productNums >=  defaultSlice?
 						<Pagination
@@ -64,9 +56,9 @@ async function ProductsPage({ searchParams }) {
 }
   
 //Getting product list and number of products  Query
-async function GetProducts(query, pageSlice){
+async function GetProducts(query: string, pageSlice: string){
 	const products = await client.fetch(
-		`{
+		groq`{
 			"productNums": count(${query}),
 			"productsList": ${query}{
 				_id,

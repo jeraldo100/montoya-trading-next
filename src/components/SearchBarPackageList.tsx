@@ -15,7 +15,7 @@ function SearchBarPackageList() {
 	const [inputSearch, setInputSearch] = useState(search);
 
 	// Search Button Handle
-	const submitSearch = (e) => {
+	const submitSearch = (e: React.FormEvent) => {
 		e.preventDefault();
 		const encodedInputSearch = encodeURI(inputSearch);
 		const pushURL = (

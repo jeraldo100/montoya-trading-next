@@ -1,6 +1,8 @@
 import React from 'react'
 import client from '@/components/sanity.client'
 import styles from '@/styles/PagesCSS/PackageList.module.scss'
+import { Packs } from '../interfaces'
+import { groq } from 'next-sanity'
 import PackageCardsContainer from '@/components/PackageCardsContainer'
 import SearchBarPackageList from '@/components/SearchBarPackageList'
 import Pagination from '@/components/Pagination';
@@ -11,17 +13,18 @@ async function PackageList({ searchParams }) {
 	const page = searchParams.page ? Number(searchParams.page) : 1;
 
 	const defaultSlice = 8;
-	const itemEnd = page * defaultSlice;
+	const itemEnd= page * defaultSlice;
 	const itemStart = itemEnd - defaultSlice;
 	const pageSlice = `[${itemStart}...${itemEnd}]`;
 
-	const query = (
+	const query: string = (
 		search == '' ?
 			`*[_type == "packages"]` :
 				`*[_type == "packages" && name match '*${search}*']`
 	);
 
 	const packs = await GetPackagelist(query, pageSlice)
+	const packageLists : Array<Packs> = packs.packageLists;
 
 	return (
 		<>
@@ -30,7 +33,7 @@ async function PackageList({ searchParams }) {
 				{packs.packageNums >= 1 ? 
 					<>
 						<PackageCardsContainer
-							packageLists={packs.packageLists}
+							packageLists={packageLists}
 						/>
 						{packs.packageNums >=  defaultSlice?
 							<Pagination
@@ -47,12 +50,12 @@ async function PackageList({ searchParams }) {
 	)
 }
 
-async function GetPackagelist(query, pageSlice){
+async function GetPackagelist(query: string, pageSlice: string){
     const packs = await client.fetch( 
-		`{
+		groq`{
 			"packageNums": count(${query}),
 			"packageLists": ${query}{
-				"key": _id,
+				_id,
 				name,
 				"slug": slug.current,
 				"thumbPic": thumbPic.asset->url,

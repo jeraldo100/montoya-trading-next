@@ -1,6 +1,7 @@
 import './globals.scss'
 import styles from '@/styles/PagesCSS/Home.module.scss'
 import client from '@/components/sanity.client';
+import { Products, HomeCarouselPics, Packs } from './interfaces';
 import Link from 'next/link'
 import Image from 'next/image';
 import HomeCarousel from '@/components/HomeCarousel'
@@ -9,31 +10,11 @@ import PackageCardsContainer from '@/components/PackageCardsContainer';
 import { roboto300, roboto500, roboto700 } from './fonts';
 import { BiSolidChevronsRight } from "react-icons/bi";
 
-interface Products{
-	_id: string
-	name: string
-	slug: string
-	thumbPic: string
-}
-interface HomeCarouselPics{
-	_id: string
-	name: string
-	pics: string
-}
-interface PackageLists{
-	_id: string
-	name: string
-	slug: string
-	thumbPic: string
-	description: string
-	inclusionsCount: number
-}
-
 async function Home() {
 	const homeQuery = await getHomeQuery()
-	const products: Products = homeQuery.products;
-	const homeCarouselPics: HomeCarouselPics = homeQuery.homeCarouselPics;
-	const packageLists: PackageLists = homeQuery.packageLists;
+	const products: Array<Products> = homeQuery.products;
+	const homeCarouselPics: Array<HomeCarouselPics> = homeQuery.homeCarouselPics;
+	const packageLists: Array<Packs> = homeQuery.packageLists;
 
 	return (
 		<main>

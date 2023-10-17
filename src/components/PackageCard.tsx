@@ -1,33 +1,34 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from '@/styles/PackageCard.module.scss'
+import { Packs } from '@/app/interfaces'
 import { roboto300, roboto700 } from '@/app/fonts'
 
-function PackageCard( { key, name, slug, thumbPic, description, inclusionsCount } ) {
+function PackageCard( { pack } : {pack : Packs} ) {
 	return (
 		<>
 			<div
-				key={key}
+				key={ pack._id }
 				className={styles.packageCard}
 			>
 				{/* Image Container */}
 				<div className={styles.imgContainer}>
-					<img className={styles.image} src={`${thumbPic}?q=40`} alt={name} />
+					<img className={styles.image} src={`${ pack.thumbPic }?q=40`} alt={ pack.name } />
 				</div>
 				{/* Name Description Inclusion-Number and Button Container */}
 				<div className={styles.infoContainer}>
 					<h1 className={`${roboto700.className} ${styles.name}`}>
-						{ name }
+						{ pack.name }
 					</h1>
 					<div className={styles.descContainer}>
-						<pre className={`${styles.description} ${roboto300.className}`}>{ description }</pre>
+						<pre className={`${styles.description} ${roboto300.className}`}>{ pack.description }</pre>
 					</div>
 					{/* Inclusion Number and Button Container */}
 					<div className={styles.btns}>
 						<div className={`${styles.totalItems} ${roboto300.className}`}>
-							INCLUSIONS: { inclusionsCount }
+							INCLUSIONS: { pack.inclusionsCount }
 						</div>
-						<Link href={`/Packages/${slug}`} style={{ textDecoration: 'none' }}>
+						<Link href={`/Packages/${ pack.slug }`} style={{ textDecoration: 'none' }}>
 							<div className={`${styles.detailsBtn} ${roboto300.className}`}>
 								DETAILS
 							</div>

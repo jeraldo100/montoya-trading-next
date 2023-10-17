@@ -2,11 +2,12 @@
 import React from 'react'
 import styles from '@/styles/HomeCarousel.module.scss';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { HomeCarouselPics } from '@/app/interfaces';
 import { Carousel } from 'react-responsive-carousel';
 import { BiSolidChevronsLeft, BiSolidChevronsRight } from "react-icons/bi";
 
 
-function HomeCarousel({homeCarouselPics}) {
+function HomeCarousel({ homeCarouselPics } : { homeCarouselPics: Array<HomeCarouselPics> }) {
     return (
         <>
             <div className={styles.homeCarousel}>

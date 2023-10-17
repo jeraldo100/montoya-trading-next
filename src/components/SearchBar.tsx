@@ -28,7 +28,7 @@ function SearchBar() {
 	];
 	
 	// Decode category string to human readable
-	const categoryDecode = (inputCategory) => {
+	const categoryDecode = (inputCategory: string) => {
 		switch(inputCategory){
 			case 'any':
 				return 'Category';
@@ -53,7 +53,7 @@ function SearchBar() {
 	const [toggleRotate, setToggleRotate] = useState(false)
 
 	// handler for Category Button
-	const handleCategoryBtn = (newInputCategory) => {
+	const handleCategoryBtn = (newInputCategory: string) => {
 		setInputCategory(newInputCategory);
 		setCategoryBtn(categoryDecode(newInputCategory));
 		setToggle(!toggle);

@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from '@/styles/PackageInfo.module.scss'
+import { Pack } from '@/app/interfaces'
 import HorizontalProductsContainer from './HorizontalProductsContainer'
 import ShareBtn from './ShareBtn'
 import { roboto300, roboto500, roboto700 } from '@/app/fonts'
 
-function PackageInfo({ name, thumbPic, description, inclusions }) {
+function PackageInfo({ pack }: { pack: Pack }) {
   return (
 	<>
 		{/* Overall Container as flex collumn */}
@@ -13,16 +14,16 @@ function PackageInfo({ name, thumbPic, description, inclusions }) {
 			<div className={styles.imgAndInfo}>
 				{/* image and share button Container */}
 				<div className={styles.imgContainer}>
-					<img className={styles.image} src={ thumbPic } alt={ name }/>
+					<img className={styles.image} src={ pack.thumbPic } alt={ pack.name }/>
 				</div>
 				{/* Name and Description Container as flex collumn */}
 				<div className={styles.infoContainer}>
 					<div className={`${styles.name} ${roboto700.className}`}>
-						<h1>{ name }</h1>
+						<h1>{ pack.name }</h1>
 					</div>
 					<h2 className={`${styles.descH2} ${roboto500.className}`}>Description: </h2>
 					<pre className={`${styles.description} ${roboto300.className}`}>
-						{ description }
+						{ pack.description }
 					</pre>
 					<ShareBtn />
 				</div>
@@ -32,7 +33,7 @@ function PackageInfo({ name, thumbPic, description, inclusions }) {
 				Inclusions:
 			</p>
 			<HorizontalProductsContainer 
-				products={ inclusions }
+				products={ pack.inclusions }
 			/>
 		</div>
 	</>

@@ -1,20 +1,16 @@
 import React from 'react'
 import styles from '@/styles/PackageCardsContainer.module.scss'
+import { Packs } from '@/app/interfaces'
 import PackageCard from './PackageCard'
 
-function PackageCardsContainer({ packageLists }) {
+function PackageCardsContainer({ packageLists } : { packageLists : Array<Packs> }) {
 	return (
 		<div className={styles.PackageCardsContainer}>
-			{packageLists.map((packageList) => { 
+			{packageLists.map((pack) => { 
 				return(
 					<>
 						<PackageCard
-							key={packageList._id}
-							name={packageList.name}
-							slug={packageList.slug}
-							thumbPic={packageList.thumbPic}
-							description={packageList.description}
-							inclusionsCount={packageList.inclusionsCount}
+							pack={pack}
 						/>
 					</>
 				)

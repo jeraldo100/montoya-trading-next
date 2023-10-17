@@ -1,32 +1,30 @@
 import React from 'react'
 import client from '@/components/sanity.client'
+import { Pack } from '@/app/interfaces'
+import { groq } from 'next-sanity'
 import PackageInfo from '@/components/PackageInfo'
 
-async function PackageInfoPage({ params }) {
-	const pack = await GetPackageInfo( params )
+async function PackageInfoPage({ params } : { params: { slug: string } }) {
+	const pack: Pack = await GetPackageInfo( params )
 
 	return (
 		<>
 			<PackageInfo
-				key={pack.key}
-				name={pack.name}
-				thumbPic={pack.thumbPic}
-				description={pack.description}
-				inclusions={pack.inclusions}
+				pack={pack}
 			/>
 		</>
 	)
 }
 
 // Generate Metadata for packages
-export async function generateMetadata({ params }){
-	const pack = await client.fetch(
-		`*[_type == "packages" && slug.current == '${ params.slug }']{
+export async function generateMetadata({ params } : { params: { slug: string } }){
+	const pack: Pack = await client.fetch(
+		groq`*[_type == "packages" && slug.current == '${ params.slug }']{
 			name,
 			description,
 		}[0]`
 	);
-	const name = `${pack.name}|Montoya Trading`;
+	const name = `${pack.name} | Montoya Trading`;
 	const description = pack.description.slice(0, 160);
 	return {
 		title: name,
@@ -41,7 +39,7 @@ export async function generateMetadata({ params }){
 
 //Statically generate routes at build time instead of on-demand at request time
 export async function generateStaticParams() {
-	const query = `*[_type == "Package"]{
+	const query = groq`*[_type == "Package"]{
 		slug {
 			current
 		}
@@ -54,20 +52,21 @@ export async function generateStaticParams() {
 }
 
 // Fetching Data of Package from Sanity 
-async function GetPackageInfo( params ){
-    const query = `*[_type == "packages" && slug.current == '${ params.slug }']{
-		"key": _id,
-		name,
-		"thumbPic": thumbPic.asset->url,
-		description,
-		"inclusions": inclusions[]->{
-			"key": _id,
+async function GetPackageInfo( params: { slug: string } ){
+    const pack: Pack = await client.fetch(
+		groq`*[_type == "packages" && slug.current == '${ params.slug }']{
+			_id,
 			name,
-			"slug": slug.current,
 			"thumbPic": thumbPic.asset->url,
-		}
-    }[0]`;
-    const pack = await client.fetch(query);
+			description,
+			"inclusions": inclusions[]->{
+				_id,
+				name,
+				"slug": slug.current,
+				"thumbPic": thumbPic.asset->url,
+			}
+    	}[0]`
+	);
   
     return pack
 }

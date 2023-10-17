@@ -30,7 +30,7 @@ export interface Pack{
 		name: string
 		slug: string
 		thumbPic: string
-	}
+	}[]
 }
 
 // Types for lists of products

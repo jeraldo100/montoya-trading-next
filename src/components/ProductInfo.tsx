@@ -74,12 +74,7 @@ function ProductInfo({ product }: { product: Product }) {
                                 return (
                                     <>
                                         <PackageCard
-                                            key={ pack._id }
-                                            name={ pack.name }
-                                            slug={ pack.slug }
-                                            thumbPic={ pack.thumbPic }
-                                            description={ pack.description }
-                                            inclusionsCount={ pack.inclusionsCount }
+                                            pack={pack}
                                         />
                                     </>
                                 );

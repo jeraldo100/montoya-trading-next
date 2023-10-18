@@ -1,4 +1,3 @@
-import './globals.scss'
 import styles from '@/styles/PagesCSS/Home.module.scss'
 import client from '@/components/sanity.client';
 import { Products, HomeCarouselPics, Packs } from './interfaces';
@@ -7,6 +6,7 @@ import Image from 'next/image';
 import HomeCarousel from '@/components/HomeCarousel'
 import HorizontalProductsContainer from '@/components/HorizontalProductsContainer';
 import PackageCardsContainer from '@/components/PackageCardsContainer';
+import CategorySelection from '@/components/CategorySelection';
 import { roboto300, roboto500, roboto700 } from './fonts';
 import { BiSolidChevronsRight } from "react-icons/bi";
 
@@ -21,6 +21,7 @@ async function Home() {
 			<HomeCarousel 
 				homeCarouselPics={ homeCarouselPics }
 			/>
+			
 			{/* Headline Conatainer */}
 			<div className={styles.headline}>
 				<h1 className={`${styles.headlineHeader} ${roboto700.className}`}>
@@ -43,6 +44,7 @@ async function Home() {
 					</div>
 				</div>
 			</div>
+
 			{/* New Arrivals of products Container only displays 10 newest items  */}
 			<div className={styles.newArrivalsContainer}>
 				<div className={styles.selectionHeader}>
@@ -58,6 +60,12 @@ async function Home() {
 					products={ products }
 				/>
 			</div>
+
+			{/* Category Selection Container */}
+			<div className={styles.categorySelectionContainer}>
+				<CategorySelection />
+			</div>
+
 			{/* Preview of packages Container only displays 6 newest items  */}
 			<div className={styles.packagesContainer}>
 				<div className={styles.selectionHeader}>

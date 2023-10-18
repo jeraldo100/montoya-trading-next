@@ -1,40 +1,43 @@
 import React from 'react'
 import styles from '@/styles/PagesCSS/ContactUs.module.scss';
-// import EmailForm from '@/components/EmailForm';
-import { roboto300, roboto500 } from '@/app/fonts';
+import { roboto300, roboto500, roboto700 } from '@/app/fonts';
 import { BiSolidEnvelope, BiLogoFacebookCircle, BiSolidMap } from "react-icons/bi";
 import { FaViber } from "react-icons/fa";
 
 function ContactUs() {
 	return (
 		<>
-			<h1 className={`${styles.contactH1} ${roboto300.className}`}>Contact Us</h1>
-			<div className={`${styles.contacts} ${roboto300.className}`}>
-				
-				<div>
-					<BiSolidEnvelope className={styles.icons} /> 
-					<span className={roboto500.className}>Email Us</span>: montoya_trading@yahoo.com
-				</div>
-				<p>
-					<FaViber className={styles.icons} /> 
-					<span className={roboto500.className}>Viber</span>: +639195956096
-				</p>
-				<p>
-					<BiLogoFacebookCircle className={styles.icons} /> 
-					<span className={roboto500.className}>Facebook</span>: <a href='https://www.facebook.com/montoyatrading/' target="_blank">
-						https://www.facebook.com/montoyatrading/
-					</a>
-				</p>
-				<p>
-					<BiSolidMap className={styles.icons} /> 
-					<span className={roboto500.className}>Location</span>: Marulas, Valenzuela City, Philippines
-				</p>
+			<div className={styles.header}>
+				<h1 className={`${styles.headerText} ${roboto300.className}`}>Contact Us</h1>
 			</div>
-			{/* <div className={styles.formContainer}>
-				<h1 className={`${styles.requestH1} ${roboto300.className}`}>Send a Request</h1>
-				Import Email Send a Request
-				<EmailForm />
-			</div> */}
+			<div className={styles.contactsContainer}>
+				<div className={styles.contact}>
+					<BiSolidEnvelope className={styles.icon} />
+					<div className={`${styles.contactHeader1} ${roboto700.className}`}>By Email:</div>
+					<div className={`${styles.contactHeader2} ${roboto500.className}`}>montoya_trading@yahoo.com</div>
+					{/* <div className={`${styles.contactText} ${roboto300.className}`}>gdfgdfgdfgdgdf</div> */}
+				</div>
+				<div className={styles.contact}>
+					<FaViber className={styles.icon} />
+					<div className={`${styles.contactHeader1} ${roboto700.className}`}>Through Viber:</div>
+					<div className={`${styles.contactHeader2} ${roboto500.className}`}>+639195956096</div>
+					{/* <div className={`${styles.contactText} ${roboto300.className}`}>gdfgdfgdfgdgdf</div> */}
+				</div>
+				<div className={styles.contact}>
+					<BiLogoFacebookCircle className={styles.icon} />
+					<div className={`${styles.contactHeader1} ${roboto700.className}`}>Through Facebook:</div>
+					<div className={`${styles.contactHeader2} ${roboto500.className}`}>
+						<a href='https://www.facebook.com/montoyatrading/'>https://www.facebook.com/montoyatrading/</a>
+					</div>
+					{/* <div className={`${styles.contactText} ${roboto300.className}`}>gdfgdfgdfgdgdf</div> */}
+				</div>
+				<div className={styles.contact}>
+					<BiSolidMap className={styles.icon} />
+					<div className={`${styles.contactHeader1} ${roboto700.className}`}>Visit Us:</div>
+					<div className={`${styles.contactHeader2} ${roboto500.className}`}>Marulas, Valenzuela City, Philippines</div>
+					{/* <div className={`${styles.contactText} ${roboto300.className}`}>gdfgdfgdfgdgdf</div> */}
+				</div>
+			</div>
 		</>
 	)
 }

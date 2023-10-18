@@ -1,57 +1,56 @@
 /* Color Pallete */
 @import "../ColorPallete.module.scss"; 
 
-.contactH1{
-    margin: 0.6em 0em 0.6em 24px;
+.header{
+    margin: 1em 24px 1em 24px;
+}
+
+.headerText{
+    font-size: xx-large;
     color: $Grey;
 }
 
-.contacts{
+.contactsContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    padding: 1em 24px 1em 24px;
+}
+
+.contact{
     display: flex;
     flex-direction: column;
-    gap: 0.4em;
-    margin-left: 24px;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    border: solid 1px $Blue;
+    border-radius: 1em;
+}
+.icon{
+	font-size: 3rem;
+    color: $Blue;
+}
+.contactHeader1{
+    font-size: x-large;
+    color: $Grey;
+}
+.contactHeader2{
     font-size: large;
     color: $Grey;
-    min-height: 80vh;
+}
+.contactText{
+    text-align: center;
+    font-size: medium;
 }
 
-.icons{
-	position: relative;
-	top: 2.5px;
+@media only screen and (max-width: 900px) {
+    .contactsContainer{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
-
-.requestH1{
-    color: $Grey;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-}
-
-.formContainer{
-    margin-top: 1em;
-    background-color: $backgroundWhite;
-    padding: 12px 24px 24px 24px;
-}
-
 @media only screen and (max-width: 768px) {
-    .contactH1{
-        font-size: larger;
-    }
-    .contacts{
-        font-size: small;
-    }
-    .requestH1{
-        font-size: larger;
-    }
+
 }
 @media only screen and (max-width: 480px) {
-    #contactH1{
-        font-size: large;
-    }
-    .contacts{
-        font-size: x-small;
-    }
-    .requestH1{
-        font-size: large;
-    }
+
 }

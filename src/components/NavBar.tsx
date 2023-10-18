@@ -20,6 +20,13 @@ function NavBar() {
 					<Link 
 						href="/" 
 						className={`${styles.HomeLink} ${roboto700.className}`}>
+							{/* <div className={styles.logoContainer}>
+								<Image
+									src='/images/montoya-jpg.jpg'
+									alt='Montoya Trading Logo'
+									fill={true}
+								/>
+							</div> */}
 							Montoya Trading 
 					</Link>
 					<div className={styles.desktopOptions}>

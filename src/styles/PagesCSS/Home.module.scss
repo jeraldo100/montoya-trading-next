@@ -2,6 +2,7 @@
 @import "@/styles/ColorPallete.module.scss"; 
 
 .headline{
+	background-color: $backgroundWhite;
 	padding: 1em 24px 2em 24px;
 }
 .headlineHeader{
@@ -28,14 +29,14 @@
 	height: fit-content;
 }
 
-.categorySelectionContainer{
+.newArrivalsContainer{
 	padding: 1em 24px 1em 24px;
 }
-
-.newArrivalsContainer{
+.categorySelectionContainer{
 	background-color: $backgroundWhite;
 	padding: 1em 24px 1em 24px;
 }
+
 .packagesContainer{
 	display: flex;
 	flex-direction: column;

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from '@/styles/NavBar.module.scss'
 import { useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import Image from 'next/image';
 import { roboto300, roboto700 } from '@/app/fonts'
 import { BsFillBoxSeamFill } from "react-icons/bs"
 import { FaBoxes } from "react-icons/fa"
@@ -19,15 +20,15 @@ function NavBar() {
 				<div className={styles.NavStart}>
 					<Link 
 						href="/" 
-						className={`${styles.HomeLink} ${roboto700.className}`}>
-							{/* <div className={styles.logoContainer}>
+						className={`${styles.homeLinkContainer}`}>
+							<div className={styles.logoContainer}>
 								<Image
-									src='/images/montoya-jpg.jpg'
+									src='/images/logo-png-green-cropped.png'
 									alt='Montoya Trading Logo'
 									fill={true}
 								/>
-							</div> */}
-							Montoya Trading 
+							</div>
+							<h3 className={`${styles.HomeLink} ${roboto700.className}`}>Montoya Trading</h3> 
 					</Link>
 					<div className={styles.desktopOptions}>
 						<Link 

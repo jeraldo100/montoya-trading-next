@@ -15,7 +15,9 @@ function ContactUs() {
 					<BiSolidEnvelope className={styles.icon} />
 					<div className={`${styles.contactHeader1} ${roboto700.className}`}>By Email:</div>
 					<div className={`${styles.contactHeader2} ${roboto500.className}`}>montoya_trading@yahoo.com</div>
-					{/* <div className={`${styles.contactText} ${roboto300.className}`}>gdfgdfgdfgdgdf</div> */}
+					{/* <p className={`${styles.contactText} ${roboto300.className}`}>
+						
+					</p> */}
 				</div>
 				<div className={styles.contact}>
 					<FaViber className={styles.icon} />

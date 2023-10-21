@@ -30,19 +30,24 @@
 	gap: 0.8em;
 }
 
-.logoContainer{
-	position: relative;
-	height: 64px;
-	aspect-ratio: 1 /1;
+.homeLinkContainer{
+	display: flex;
+	flex-direction: row;
+	gap: 0.4em;
+	align-items: center;
+	text-decoration: none;
 }
-
 .HomeLink{
 	font-size: x-large;
 	color: $BlueGreen;
-	text-decoration: none;
 	padding: 0.4em 12px 0.4em 12px;
 	transition: 0.3s;
 	white-space: nowrap;
+}
+.logoContainer{
+	position: relative;
+	width: 64px;
+	aspect-ratio: 109 /78;
 }
 
 .NavLinks{
@@ -154,6 +159,9 @@
     }
 	.NavLinks{
 		font-size: x-small;
+	}
+	.logoContainer{
+		width: 32px;
 	}
 }
 @media only screen and (max-width: 640px) {

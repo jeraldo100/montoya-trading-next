@@ -1,35 +1,108 @@
 /* Color Pallete */
 @import "./ColorPallete.module.scss"; 
 
-.Footer{
+.footerContainer{
 	display: flex;
-	justify-content: space-between;
-	background-color: $Blue;
-	margin-bottom: 0;
-	padding: 10px;
+	flex-direction: row;
+	flex-wrap: nowrap;
 	align-items: center;
+	gap: 1em;
+	justify-content: space-between;
+	padding: 1em 24px 1em 24px;
+	background-color: $GreyShaded;
 }
 
-.Footer h1{
+.bottom{
+	display: none;
+	justify-content: center;
+	background-color: $GreyShaded;
+}
+
+.logoAndCopyright{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.logoContainer{
+	position: relative;
+	width: 128px;
+	aspect-ratio: 1 / 1;
+}
+.copyright{
 	font-size: x-small;
 	color: white;
 }
 
-.Footer img{
-	width: 100px;
+.support{
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
 }
-
-.Socials{
-	color: $BlueWhite;
+.links{
 	font-size: small;
-    margin-left: 3px;
+	color: white;
+	white-space: nowrap;
+}
+.links:hover{
+	cursor: pointer;
+	text-decoration: underline;
 }
 
-@media only screen and (max-width: 480px) {
-	.Footer h1{
+.products{
+	display: flex;
+	flex-direction: column;
+	gap: 0.4em;
+}
+
+.socials{
+	display: flex;
+	flex-direction: column;
+	gap: 0.4em;
+}
+.icons{
+	color: $BlueWhite;
+	position: relative;
+	top: 2px;
+}
+
+.contacts{
+	display: flex;
+	flex-direction: column;
+	color: white;
+	font-size: small;
+}
+
+@media only screen and (max-width: 768px) {
+	.footerContainer{
+		padding: 1em 12px 1em 12px;
+	}
+	.logoContainer{
+		width: 64px;
+	}
+	.copyright{
         font-size: xx-small;
     }
-	.Socials{
+	.links{
 		font-size: x-small;
 	}
+	.contacts{
+		font-size: x-small;
+	}
+	.top{
+		display: none;
+	}
+	.bottom{
+		display: flex;
+	}
+}
+@media only screen and (max-width: 640px) {
+	.links{
+		font-size: xx-small;
+	}
+	.contacts{
+		font-size: xx-small;
+	}
+}
+@media only screen and (max-width: 480px) {
+	
 }

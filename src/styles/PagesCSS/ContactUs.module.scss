@@ -15,6 +15,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
     padding: 1em 24px 1em 24px;
+    background-color: $backgroundWhite;
 }
 
 .contact{
@@ -25,6 +26,7 @@
     padding: 1em;
     border: solid 1px $Blue;
     border-radius: 1em;
+    background-color: white;
 }
 .icon{
 	font-size: 3rem;

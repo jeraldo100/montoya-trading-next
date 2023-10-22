@@ -51,8 +51,53 @@
     }
 }
 @media only screen and (max-width: 768px) {
-
+    .headerText{
+        font-size: x-large;
+    }
+    .icon{
+        font-size: 2.5rem;
+    }
+    .contactHeader1{
+        font-size: large;
+    }
+    .contactHeader2{
+        font-size: medium;
+    }
+    .contactText{
+        font-size: small;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .headerText{
+        font-size: large;
+    }
+    .icon{
+        font-size: 2rem;
+    }
+    .contactHeader1{
+        font-size: medium;
+    }
+    .contactHeader2{
+        font-size: small;
+    }
+    .contactText{
+        font-size: x-small;
+    }
 }
 @media only screen and (max-width: 480px) {
-
+    .headerText{
+        font-size: medium;
+    }
+    .icon{
+        font-size: 1.8rem;
+    }
+    .contactHeader1{
+        font-size: small;
+    }
+    .contactHeader2{
+        font-size: x-small;
+    }
+    .contactText{
+        font-size: xx-small;
+    }
 }

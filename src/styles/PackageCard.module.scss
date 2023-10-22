@@ -73,9 +73,9 @@
 
 .totalItems{
 	font-size: smaller;
-	background-color: $BlueGreen;
+	background-color: $Blue;
 	border: solid 2px;
-	border-color: $BlueGreen;
+	border-color: $Blue;
 	border-radius: 2em;
 	padding: 0.6em;
 	color: white;
@@ -87,17 +87,17 @@
 .detailsBtn{
 	font-size: smaller;
 	border: solid 2px;
-	border-color: $BlueGreen;
+	border-color: $Blue;
 	border-radius: 2em;
 	padding: 0.6em;
-	color: $BlueGreen;
+	color: $Blue;
 	width: fit-content;
 	height: fit-content;
 	transition: 0.3s;
 }
 
 .detailsBtn:hover{
-	background-color: $BlueGreen;
+	background-color: $Blue;
 	color: white;
 	cursor: pointer;
 }

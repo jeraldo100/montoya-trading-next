@@ -10,7 +10,7 @@ function Footer() {
 	const router = useRouter();
 
 	return (
-		<>
+		<div className={styles.footer}>
 			<div className={styles.footerContainer}>
 				<div className={styles.top}>
 					<div className={styles.logoAndCopyright}>
@@ -96,13 +96,15 @@ function Footer() {
 						</p>
 					</a>
 				</div>
-
-				<div className={`${styles.contacts} ${roboto300.className}`}>
-					<p>Marulas, Valenzuela City, Philippines</p>
-					<p>montoya_trading@yahoo.com</p>
-					<p>+639195956096</p>
+				<div className={styles.top}>
+					<div className={`${styles.contacts} ${roboto300.className}`}>
+						<p>Marulas, Valenzuela City, Philippines</p>
+						<p>montoya_trading@yahoo.com</p>
+						<p>+639195956096</p>
+					</div>
 				</div>
 			</div>
+			<hr className={styles.line} />
 			<div className={styles.bottom}>
 				<div className={styles.logoAndCopyright}>
 					<div className={styles.logoContainer}>
@@ -110,8 +112,13 @@ function Footer() {
 					</div>
 					<p className={`${styles.copyright} ${roboto300.className}`}>© Montoya Trading. All rights reserved.</p>
 				</div>
+				<div className={`${styles.contacts} ${roboto300.className}`}>
+					<p>Marulas, Valenzuela City, Philippines</p>
+					<p>montoya_trading@yahoo.com</p>
+					<p>+639195956096</p>
+				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

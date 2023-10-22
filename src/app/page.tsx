@@ -2,12 +2,13 @@ import styles from '@/styles/PagesCSS/Home.module.scss'
 import client from '@/components/sanity.client';
 import { Products, HomeCarouselPics, Packs } from './interfaces';
 import Link from 'next/link'
-import Image from 'next/image';
 import HomeCarousel from '@/components/HomeCarousel'
+import Headline from '@/components/Headline';
 import HorizontalProductsContainer from '@/components/HorizontalProductsContainer';
 import PackageCardsContainer from '@/components/PackageCardsContainer';
 import CategorySelection from '@/components/CategorySelection';
-import { roboto300, roboto500, roboto700 } from './fonts';
+import Brands from '@/components/Brands';
+import { roboto300, roboto500 } from './fonts';
 import { BiSolidChevronsRight } from "react-icons/bi";
 
 async function Home() {
@@ -23,26 +24,8 @@ async function Home() {
 			/>
 			
 			{/* Headline Conatainer */}
-			<div className={styles.headline}>
-				<h1 className={`${styles.headlineHeader} ${roboto700.className}`}>
-					The Best Retailer for POS System goods in the Philippines
-				</h1>
-				<br />
-				<div className={`${styles.headlineBody} ${roboto300.className}`}>
-					<div className={styles.headlineBodyText}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nisl sem, congue vel lacus sit amet, cursus imperdiet ligula. Vestibulum id augue vel augue vestibulum dignissim. Mauris interdum justo in augue lacinia, a finibus metus porta. Phasellus sem felis, porttitor sit amet arcu vel, luctus finibus nibh. Phasellus ultrices congue congue. Proin hendrerit fringilla libero eu pharetra. Aliquam turpis tellus, tincidunt sed velit non, suscipit elementum est. Sed iaculis, ligula vitae lobortis feugiat, magna elit bibendum turpis, quis tincidunt augue justo sed lorem. Integer sit amet nunc malesuada, aliquam nulla sed, placerat ante. Pellentesque vestibulum sit amet nibh sit amet congue. Aliquam laoreet, magna sit amet accumsan consequat, lacus nulla ornare dui, et molestie enim mi non augue. In mollis ante auctor ex feugiat, sed dapibus neque finibus. Mauris varius tincidunt purus, sed semper erat. Donec malesuada nunc sed felis suscipit molestie.
-					</div>
-					<div className={styles.headlineBodyImgContiainer}>
-						<Image 
-							className={styles.headlineBodyImg} 
-							fill={true}
-							src='/close-up-baker-bakery-shop.jpg' 
-							style={{objectFit: "contain", borderRadius: '1rem'}}
-							quality={50}
-							alt='POS system setup Image by Freepik' 
-						/>
-					</div>
-				</div>
+			<div className={styles.headlineContainer}>
+				<Headline />
 			</div>
 
 			{/* New Arrivals of products Container only displays 10 newest items  */}
@@ -62,7 +45,7 @@ async function Home() {
 			</div>
 
 			{/* Category Selection Container */}
-			<div className={styles.categorySelectionContainer}>
+			<div className={styles.subsection}>
 				<CategorySelection />
 			</div>
 
@@ -80,6 +63,11 @@ async function Home() {
 				<PackageCardsContainer 
 					packageLists={ packageLists }
 				/>
+			</div>
+
+			{/* Featured Brands Container */}
+			<div className={styles.subsection}>
+				<Brands />
 			</div>
 		</main>
 	)

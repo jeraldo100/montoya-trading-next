@@ -36,11 +36,12 @@
 	gap: 0.4em;
 	align-items: center;
 	text-decoration: none;
+	padding: 0em 12px 0em 12px;
 }
 .HomeLink{
 	font-size: x-large;
 	color: $BlueGreen;
-	padding: 0.4em 12px 0.4em 12px;
+	
 	transition: 0.3s;
 	white-space: nowrap;
 }

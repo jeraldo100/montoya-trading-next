@@ -1,6 +1,10 @@
 /* Color Pallete */
 @import "./ColorPallete.module.scss"; 
 
+.footer{
+	background-color: $GreyShaded;
+}
+
 .footerContainer{
 	display: flex;
 	flex-direction: row;
@@ -9,13 +13,14 @@
 	gap: 1em;
 	justify-content: space-between;
 	padding: 1em 24px 1em 24px;
-	background-color: $GreyShaded;
 }
 
 .bottom{
 	display: none;
-	justify-content: center;
-	background-color: $GreyShaded;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0em 12px 1em 12px;
 }
 
 .logoAndCopyright{
@@ -30,7 +35,7 @@
 }
 .copyright{
 	font-size: x-small;
-	color: white;
+	color: $BlueWhite;
 }
 
 .support{
@@ -40,7 +45,7 @@
 }
 .links{
 	font-size: small;
-	color: white;
+	color: $BlueWhite;
 	white-space: nowrap;
 }
 .links:hover{
@@ -68,8 +73,16 @@
 .contacts{
 	display: flex;
 	flex-direction: column;
-	color: white;
+	color: $BlueWhite;
 	font-size: small;
+}
+
+.line{
+	display: none;
+	border: solid 1px $BlueWhite;
+	width: 80vw;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
 }
 
 @media only screen and (max-width: 768px) {
@@ -90,6 +103,9 @@
 	}
 	.top{
 		display: none;
+	}
+	.line{
+		display: block;
 	}
 	.bottom{
 		display: flex;

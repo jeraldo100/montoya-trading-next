@@ -26,7 +26,7 @@ export async function generateMetadata({ params } : { params: { slug: string } }
 		}[0]`
 	);
 	const productName = `${product.name} | Montoya Trading`;
-	const productDescription = product.description.slice(0, 160);
+	const productDescription = product.description.slice(0, 150);
 	return {
 		title: productName,
 		description: productDescription,
@@ -34,6 +34,13 @@ export async function generateMetadata({ params } : { params: { slug: string } }
 			title: productName,
 			description: productDescription,
 			url: `https://montoya-trading-next.vercel.app/Products/${ params.slug }`,
+			images: [
+				{
+					url: '/images/logo-white-background.png',
+					width: 600,
+					height: 600,
+				},
+			],
 		}
 	}
 }

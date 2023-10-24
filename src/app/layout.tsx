@@ -6,6 +6,9 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
 	title: 'Montoya Trading',
 	description: 'Buy and order POS sytems products in the Philippines such as printers, scanners, cash drawers, monitors or screens, biometric scanners and printer consumables. Also comes in packages. Provides printer repair services.',
+	alternates: {
+		canonical: 'https://montoya-trading-next.vercel.app',
+    },
 	viewport: 'width=device-width, initial-scale=1.0',
 	icons: [
 		{
@@ -39,6 +42,14 @@ export const metadata: Metadata = {
 		title: 'Montoya Trading',
 		description: 'Buy and order high-quality POS system products in the Philippines such as printers, scanners, cash drawers, monitors or screens, biometric scanners and printer consumables. Also comes in packages. Provides printer repair services.',
 		url: 'https://montoya-trading-next.vercel.app/',
+		images: [
+			{
+				url: '/images/logo-white-background.png',
+				width: 600,
+				height: 600,
+			},
+		],
+		type: 'website',
 	}
 }
 

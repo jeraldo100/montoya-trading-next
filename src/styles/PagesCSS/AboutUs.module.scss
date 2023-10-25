@@ -1,56 +1,214 @@
 /* Color Pallete */
 @import "../ColorPallete.module.scss"; 
 
-.aboutH1{
+.title{
     color: $Grey;
     font-size: xx-large;
-    margin-left: 24px;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: 1em 24px 1em 24px;
 }
 
 .bodyBackground{
     background-color: $backgroundWhite;
+    padding: 1em 24px 1em 24px;
 }
 
-.MontoyaH1{
+.header{
     color: $BlueGreen;
     font-size: xx-large;
-    padding-top: 12px;
-    margin-bottom: 12px;
-    margin-left: 24px;
 }
 
-.paragraphs{
-    font-size: medium;
-    margin-left: 24px;
-    margin-right: 24px;
-    padding-bottom: 12px;
+.paragrapsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.intro{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+}
+.introParagraph{
+    flex: 2;
+    font-size: x-large;
+}
+.logoContainer{
+    position: relative;
+    flex: 1;
+    aspect-ratio: 1 / 1;
+}
+
+.subheader{
+    font-size: xx-large;
+    color: $Blue;
+}
+
+.paragraphPartRight{
+    position: relative;
+}
+.paragraphOverlayRight{
+    z-index: 2;
+    position: absolute;
+    left: 45%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    background-color: rgba($color: $BlueGreenTinted, $alpha: 0.9);
+    border-radius: 0.4em;
+}
+.overlayHeaderRight{
+    color: $GreyShaded;
+    font-size: x-large;
+}
+.overlayTextRight{
+    color: $Grey;
+    font-size: large;
+}
+
+.paragraphPartLeft{
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+.paragraphOverlayLeft{
+    z-index: 2;
+    position: absolute;
+    right: 45%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    background-color: rgba($color: $BlueGreenTinted, $alpha: 0.9);
+    border-radius: 0.4em;
+}
+.overlayHeaderLeft{
+    text-align: right;
+    color: $GreyShaded;
+    font-size: x-large;
+}
+.overlayTextLeft{
+    text-align: right;
+    color: $Grey;
+    font-size: large;
+}
+
+.imageContainer{
+    width: 50%;
+}
+
+.paragraph{
+    font-size: large;
+
 }
 
 /*Scale to Small Screens */
 @media only screen and (max-width: 768px) {
-    .aboutH1{
+    .title{
         font-size: x-large;
     }
-    .MontoyaH1{
+    .header{
         font-size: x-large;
+    }
+    .introParagraph{
+        font-size: large;
+    }
+    .subheader{
+        font-size: large;
+    }
+    .overlayHeaderRight{
+        font-size: large;
+    }
+    .overlayTextRight{
+        font-size: medium;
+    }
+    .overlayHeaderLeft{
+        font-size: large;
+    }
+    .overlayTextLeft{
+        font-size: medium;
+    }
+    .paragraph{
+        font-size: medium;
     }
 }
 @media only screen and (max-width: 640px) {
-    .paragraphs{
+    .title{
+        font-size: large;
+        margin: 1em 12px 1em 12px;
+    }
+    .bodyBackground{
+        padding: 1em 12px 1em 12px;
+    }
+    .header{
+        font-size: large;
+    }
+    .introParagraph{
+        font-size: medium;
+    }
+    .subheader{
+        font-size: medium;
+    }
+    .paragraphOverlayRight{
+        gap: 0.4em;
+    }
+    .paragraphOverlayLeft{
+        gap: 0.4em;
+    }
+    .overlayHeaderRight{
         font-size: small;
+    }
+    .overlayTextRight{
+        font-size: x-small;
+    }
+    .overlayHeaderLeft{
+        font-size: small;
+    }
+    .overlayTextLeft{
+        font-size: x-small;
+    }
+    .paragraph{
+        font-size: x-small;
     }
 }
 @media only screen and (max-width: 480px) {
-    .aboutH1{
-        font-size: large;
+    .title{
+        font-size: medium;
     }
-    .MontoyaH1{
-        font-size: large;
+    .header{
+        font-size: medium;
     }
-    .paragraphs{
+    .introParagraph{
         font-size: small;
+    }
+    .subheader{
+        font-size: small;
+    }
+    .paragraphOverlayRight{
+        gap: 0.1em;
+        padding: 0.4em;
+    }
+    .paragraphOverlayLeft{
+        gap: 0.1em;
+        padding: 0.4em;
+    }
+    .overlayHeaderRight{
+        font-size: x-small;
+    }
+    .overlayTextRight{
+        font-size: xx-small;
+    }
+    .overlayHeaderLeft{
+        font-size: x-small;
+    }
+    .overlayTextLeft{
+        font-size: xx-small;
+    }
+    .paragraph{
+        font-size: xx-small;
     }
 }
 

@@ -7,9 +7,9 @@ import { FaViber } from "react-icons/fa";
 function ContactUs() {
 	return (
 		<>
-			<div className={styles.header}>
-				<h1 className={`${styles.headerText} ${roboto300.className}`}>Contact Us</h1>
-			</div>
+			<h1 className={`${styles.header} ${roboto300.className}`}>
+				Contact Us
+			</h1>
 			<div className={styles.contactsContainer}>
 				<div className={styles.contact}>
 					<BiSolidEnvelope className={styles.icon} />

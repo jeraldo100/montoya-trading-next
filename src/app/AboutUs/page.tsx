@@ -1,24 +1,127 @@
 import React from 'react'
 import styles from '@/styles/PagesCSS/AboutUs.module.scss';
-import { roboto300, roboto700 } from '@/app/fonts';
+import Image from 'next/image';
+import { roboto300, roboto500, roboto700 } from '@/app/fonts';
 
 function AboutUs() {
     return (
         <>
-            <h1 className={`${styles.aboutH1} ${roboto300.className}`}>About Us</h1>
+            <h1 className={`${styles.title} ${roboto300.className}`}>About Us</h1>
             <div className={styles.bodyBackground}>
-                <h1 className={`${styles.MontoyaH1} ${roboto700.className}`}>Montoya Trading</h1>
-                <p className={`${styles.paragraphs} ${roboto300.className}`}>
-                    Suspendisse tristique orci nisi, et ultricies elit varius at. Nulla posuere sem odio, ac feugiat dui blandit eget. Maecenas accumsan quam at gravida dictum. Etiam tempus nibh vel turpis pellentesque, semper aliquet enim efficitur. Aenean efficitur vel quam sit amet finibus. Suspendisse potenti. Integer a mi tempor metus tristique aliquet eget ut eros. Praesent lectus felis, porta bibendum erat mattis, ultrices lacinia sapien.
-                    <br /><br />
-                    Nullam et odio ac dui facilisis finibus mollis a diam. Praesent turpis risus, placerat at finibus ut, placerat at ligula. Integer sed tellus sit amet lacus tincidunt tincidunt nec at odio. Nunc sed cursus magna. Curabitur vitae viverra ligula. Phasellus ac ullamcorper ante, at interdum augue. Curabitur gravida orci vel eros suscipit mollis. Curabitur aliquet, lacus sed malesuada pretium, purus dolor gravida nunc, nec rutrum tellus leo nec magna. Sed vel lobortis leo, quis dapibus nibh. Ut ut fringilla mauris, sed imperdiet magna.
-                    <br /><br />
-                    Etiam ac elementum est. Suspendisse eget vehicula odio. Vivamus hendrerit egestas tellus, sed volutpat lectus suscipit id. Mauris gravida nibh enim, vitae lobortis eros commodo id. Phasellus vulputate libero eu fermentum rhoncus. Aliquam quis auctor enim, sed pharetra urna. Duis molestie mauris at neque ultricies iaculis. Integer vel consectetur odio. Morbi nisi sapien, vulputate nec porta non, ornare at turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam a sagittis arcu, ac scelerisque elit. Aenean risus dui, laoreet ac egestas eu, eleifend non lorem. Suspendisse tincidunt eget ipsum tempus tincidunt. Morbi porttitor sit amet ligula eget laoreet. Nam at luctus eros.
-                    <br /><br />
-                    Integer volutpat diam vitae dui mattis, sit amet commodo erat volutpat. Etiam vel nisi faucibus, feugiat turpis in, mollis neque. Curabitur non viverra lorem. Suspendisse aliquam id nisl quis egestas. Ut semper velit vitae tempor placerat. Integer et congue dolor, ut bibendum est. Proin eu vestibulum ex.
-                    <br /><br />
-                    Nunc et quam sed mauris iaculis venenatis ac a purus. Nam lobortis lorem non sem imperdiet, id posuere dolor tincidunt. Nam ex lectus, dictum eget metus semper, aliquet maximus nisi. Phasellus aliquam, nibh at mattis congue, lectus odio semper purus, nec blandit quam risus eget sapien. Fusce non purus sed est imperdiet venenatis id ut felis. Integer id mi ligula. Sed vel risus a lorem dapibus aliquam. Donec mattis vel enim vitae rhoncus. Fusce id nisi diam. Donec laoreet massa in viverra auctor. Aenean tempus est egestas urna finibus, eu suscipit lacus blandit. Vestibulum tincidunt lacus id felis volutpat, non hendrerit mauris consequat. Vivamus sagittis ligula quis ante rutrum viverra.
-                </p>
+                <div className={styles.paragrapsContainer}>
+                    <h1 className={`${styles.header} ${roboto700.className}`}>Montoya Trading</h1>
+
+                    <div className={styles.intro}>
+                        <p className={`${styles.introParagraph} ${roboto300.className}`}>
+                            Welcome to Montoya Trading, your trusted partner in the world of Point of Sale (POS) hardware solutions. Since our establishment in 2015, we&apos;ve been dedicated to providing top-notch services to businesses of all sizes.
+                        </p>
+                        <div className={styles.logoContainer}>
+                            <Image 
+                                fill={true}
+                                src='/images/logo-png.png' 
+                                style={{objectFit: "contain"}}
+                                quality={80}
+                                alt='Montoya Trading Logo' 
+                            />
+                        </div>
+                    </div>
+                    <h2 className={`${styles.subheader} ${roboto500.className}`}>Our Expertise</h2>
+                    <p className={`${styles.paragraph} ${roboto300.className}`}>
+                        At Montoya Trading, we specialize in:
+                    </p>
+                    
+                    <div className={styles.paragraphPartRight}>
+                        <div className={styles.imageContainer}>
+                            <Image
+                                src='/images/POS-hardware.jpg' 
+                                height={200}
+                                width={400}
+                                layout='responsive'
+                                style={{objectFit: "contain", borderRadius: '0.4rem'}}
+                                quality={50}
+                                alt='POS Hardware Image by prostooleh on Freepik' 
+                            />
+                        </div>
+                        <div className={styles.paragraphOverlayRight}>
+                            <h3 className={`${styles.overlayHeaderRight} ${roboto700.className}`}>POS Hardware</h3>
+                            <p className={`${styles.overlayTextRight} ${roboto300.className}`}>
+                                We offer a wide range of high-quality POS hardware solutions to streamline your business operations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className={styles.paragraphPartLeft}>
+                        <div className={styles.imageContainer}>
+                            <Image
+                                src='/images/printer-repair.jpg' 
+                                height={200}
+                                width={400}
+                                layout='responsive'
+                                style={{objectFit: "contain", borderRadius: '0.4rem'}}
+                                quality={50}
+                                alt='Printer Repair Image by Freepik'
+                            />
+                        </div>
+                        <div className={styles.paragraphOverlayLeft}>
+                            <h3 className={`${styles.overlayHeaderLeft} ${roboto700.className}`}>Printer Repairs</h3>
+                            <p className={`${styles.overlayTextLeft} ${roboto300.className}`}>
+                                Our experienced technicians are here to keep your POS printers running smoothly. We&apos;re committed to quick and efficient printer repairs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className={styles.paragraphPartRight}>
+                        <div className={styles.imageContainer}>
+                            <Image
+                                src='/images/rentals.jpg' 
+                                height={200}
+                                width={400}
+                                layout='responsive'
+                                style={{objectFit: "contain", borderRadius: '0.4rem'}}
+                                quality={50}
+                                alt='POS Rentals Image by rawpixel.com on Freepik' 
+                            />
+                        </div>
+                        <div className={styles.paragraphOverlayRight}>
+                            <h3 className={`${styles.overlayHeaderRight} ${roboto700.className}`}>POS Printer Rentals</h3>
+                            <p className={`${styles.overlayTextRight} ${roboto300.className}`}>
+                                Need a temporary solution? Our POS printer rentals are the perfect choice, ensuring you&apos;re never without the tools you need.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div className={styles.paragraphPartLeft}>
+                        <div className={styles.imageContainer}>
+                            <Image
+                                src='/images/packages.jpg' 
+                                height={200}
+                                width={400}
+                                layout='responsive'
+                                style={{objectFit: "contain", borderRadius: '0.4rem'}}
+                                quality={50}
+                                alt='Packages Image by jcomp on Freepik'
+                            />
+                        </div>
+                        <div className={styles.paragraphOverlayLeft}>
+                            <h3 className={`${styles.overlayHeaderLeft} ${roboto700.className}`}>Scalable POS System Packages</h3>
+                            <p className={`${styles.overlayTextLeft} ${roboto300.className}`}>
+                                We understand that every business is unique. That&apos;s why we offer scalable POS system packages tailored to your specific needs. Whether you&apos;re a small startup or an established enterprise, our flexible packages can grow with your business.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h4 className={`${styles.subheader} ${roboto500.className}`}>Our Commitment</h4>
+                    <p className={`${styles.paragraph} ${roboto300.className}`}>
+                        What sets us apart is our unwavering commitment to our customers. We believe that exceptional service extends beyond the initial purchase. That&apos;s why we take pride in our excellent aftersales support. Your satisfaction is our priority, and we&apos;re here to assist you every step of the way.
+                    </p>
+                    <h4 className={`${styles.subheader} ${roboto500.className}`}>Join Our Community</h4>
+                    <p className={`${styles.paragraph} ${roboto300.className}`}>
+                        Join the growing list of businesses that have chosen Montoya Trading as their POS hardware provider. We&apos;re not just a company; we&apos;re a community of professionals dedicated to helping your business succeed.
+                    </p>
+                    <p className={`${styles.paragraph} ${roboto300.className}`}>
+                        Thank you for considering Montoya Trading for your POS needs. We look forward to serving you and helping you find the perfect POS system package for your business.
+                    </p>
+                </div>
             </div>
 
         </>

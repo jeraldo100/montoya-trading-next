@@ -2,12 +2,9 @@
 @import "../ColorPallete.module.scss"; 
 
 .header{
-    margin: 1em 24px 1em 24px;
-}
-
-.headerText{
     font-size: xx-large;
     color: $Grey;
+    margin: 1em 24px 1em 24px;
 }
 
 .contactsContainer{

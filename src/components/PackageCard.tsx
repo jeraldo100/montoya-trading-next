@@ -17,9 +17,9 @@ function PackageCard( { pack } : {pack : Packs} ) {
 				</div>
 				{/* Name Description Inclusion-Number and Button Container */}
 				<div className={styles.infoContainer}>
-					<h1 className={`${roboto700.className} ${styles.name}`}>
+					<h3 className={`${roboto700.className} ${styles.name}`}>
 						{ pack.name }
-					</h1>
+					</h3>
 					<div className={styles.descContainer}>
 						<pre className={`${styles.description} ${roboto300.className}`}>{ pack.description }</pre>
 					</div>

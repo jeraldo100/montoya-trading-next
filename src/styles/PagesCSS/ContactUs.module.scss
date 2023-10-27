@@ -48,7 +48,7 @@
     }
 }
 @media only screen and (max-width: 768px) {
-    .headerText{
+    .header{
         font-size: x-large;
     }
     .icon{
@@ -65,8 +65,12 @@
     }
 }
 @media only screen and (max-width: 640px) {
-    .headerText{
+    .header{
         font-size: large;
+        margin: 1em 12px 1em 12px;
+    }
+    .contactsContainer{
+        padding: 1em 12x 1em 12px;
     }
     .icon{
         font-size: 2rem;
@@ -82,7 +86,7 @@
     }
 }
 @media only screen and (max-width: 480px) {
-    .headerText{
+    .header{
         font-size: medium;
     }
     .icon{

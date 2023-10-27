@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { roboto300 } from '@/app/fonts'
 import { BiSearch } from "react-icons/bi";
 
-function SearchBarPackageList() {
+function SearchBarPackagesPage() {
 	const router = useRouter();
 	const searchParams = useSearchParams()
 
@@ -48,4 +48,4 @@ function SearchBarPackageList() {
 	)
 }
 
-export default SearchBarPackageList
+export default SearchBarPackagesPage

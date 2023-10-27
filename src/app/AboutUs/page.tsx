@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from '@/styles/PagesCSS/AboutUs.module.scss';
+import ParagraphPartRight from '@/components/ParagraphPartRight';
+import ParagraphPartLeft from '@/components/ParagraphPartLeft';
 import Image from 'next/image';
 import { roboto300, roboto500, roboto700 } from '@/app/fonts';
 
@@ -29,86 +31,34 @@ function AboutUs() {
                     <p className={`${styles.paragraph} ${roboto300.className}`}>
                         At Montoya Trading, we specialize in:
                     </p>
-                    
-                    <div className={styles.paragraphPartRight}>
-                        <div className={styles.imageContainer}>
-                            <Image
-                                src='/images/POS-hardware.jpg' 
-                                height={200}
-                                width={400}
-                                layout='responsive'
-                                style={{objectFit: "contain", borderRadius: '0.4rem'}}
-                                quality={50}
-                                alt='POS Hardware Image by prostooleh on Freepik' 
-                            />
-                        </div>
-                        <div className={styles.paragraphOverlayRight}>
-                            <h3 className={`${styles.overlayHeaderRight} ${roboto700.className}`}>POS Hardware</h3>
-                            <p className={`${styles.overlayTextRight} ${roboto300.className}`}>
-                                We offer a wide range of high-quality POS hardware solutions to streamline your business operations.
-                            </p>
-                        </div>
-                    </div>
 
-                    <div className={styles.paragraphPartLeft}>
-                        <div className={styles.imageContainer}>
-                            <Image
-                                src='/images/printer-repair.jpg' 
-                                height={200}
-                                width={400}
-                                layout='responsive'
-                                style={{objectFit: "contain", borderRadius: '0.4rem'}}
-                                quality={50}
-                                alt='Printer Repair Image by Freepik'
-                            />
-                        </div>
-                        <div className={styles.paragraphOverlayLeft}>
-                            <h3 className={`${styles.overlayHeaderLeft} ${roboto700.className}`}>Printer Repairs</h3>
-                            <p className={`${styles.overlayTextLeft} ${roboto300.className}`}>
-                                Our experienced technicians are here to keep your POS printers running smoothly. We&apos;re committed to quick and efficient printer repairs.
-                            </p>
-                        </div>
-                    </div>
+                    <ParagraphPartRight
+                        imgSrc='/images/POS-hardware.jpg'
+                        imgAlt='POS Hardware Image by prostooleh on Freepik'
+                        header='POS Hardware'
+                        text='We offer a wide range of high-quality POS hardware solutions to streamline your business operations.'
+                    />
 
-                    <div className={styles.paragraphPartRight}>
-                        <div className={styles.imageContainer}>
-                            <Image
-                                src='/images/rentals.jpg' 
-                                height={200}
-                                width={400}
-                                layout='responsive'
-                                style={{objectFit: "contain", borderRadius: '0.4rem'}}
-                                quality={50}
-                                alt='POS Rentals Image by rawpixel.com on Freepik' 
-                            />
-                        </div>
-                        <div className={styles.paragraphOverlayRight}>
-                            <h3 className={`${styles.overlayHeaderRight} ${roboto700.className}`}>POS Printer Rentals</h3>
-                            <p className={`${styles.overlayTextRight} ${roboto300.className}`}>
-                                Need a temporary solution? Our POS printer rentals are the perfect choice, ensuring you&apos;re never without the tools you need.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div className={styles.paragraphPartLeft}>
-                        <div className={styles.imageContainer}>
-                            <Image
-                                src='/images/packages.jpg' 
-                                height={200}
-                                width={400}
-                                layout='responsive'
-                                style={{objectFit: "contain", borderRadius: '0.4rem'}}
-                                quality={50}
-                                alt='Packages Image by jcomp on Freepik'
-                            />
-                        </div>
-                        <div className={styles.paragraphOverlayLeft}>
-                            <h3 className={`${styles.overlayHeaderLeft} ${roboto700.className}`}>Scalable POS System Packages</h3>
-                            <p className={`${styles.overlayTextLeft} ${roboto300.className}`}>
-                                We understand that every business is unique. That&apos;s why we offer scalable POS system packages tailored to your specific needs. Whether you&apos;re a small startup or an established enterprise, our flexible packages can grow with your business.
-                            </p>
-                        </div>
-                    </div>
+                    <ParagraphPartLeft
+                        imgSrc='/images/printer-repair.jpg'
+                        imgAlt='Printer Repair Image by Freepik'
+                        header='Printer Repairs'
+                        text='Our experienced technicians are here to keep your POS printers running smoothly. We&apos;re committed to quick and efficient printer repairs.'
+                    />
+
+                    <ParagraphPartRight
+                        imgSrc='/images/rentals.jpg'
+                        imgAlt='POS Rentals Image by rawpixel.com on Freepik'
+                        header='POS Printer Rentals'
+                        text='Need a temporary solution? Our POS printer rentals are the perfect choice, ensuring you&apos;re never without the tools you need.'
+                    />
+
+                    <ParagraphPartLeft
+                        imgSrc='/images/packages.jpg'
+                        imgAlt='Packages Image by jcomp on Freepik'
+                        header='Scalable POS System Packages'
+                        text='We understand that every business is unique. That&apos;s why we offer scalable POS system packages tailored to your specific needs. Whether you&apos;re a small startup or an established enterprise, our flexible packages can grow with your business.'
+                    />
 
                     <h4 className={`${styles.subheader} ${roboto500.className}`}>Our Commitment</h4>
                     <p className={`${styles.paragraph} ${roboto300.className}`}>

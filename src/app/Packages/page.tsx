@@ -1,14 +1,14 @@
 import React from 'react'
 import client from '@/components/sanity.client'
-import styles from '@/styles/PagesCSS/PackageList.module.scss'
+import styles from '@/styles/PagesCSS/PackagesPage.module.scss'
 import { Packs } from '../interfaces'
 import { groq } from 'next-sanity'
 import PackageCardsContainer from '@/components/PackageCardsContainer'
-import SearchBarPackageList from '@/components/SearchBarPackageList'
+import SearchBarPackagesPage from '@/components/SearchBarPackagesPage'
 import Pagination from '@/components/Pagination';
 import NotFound from '@/components/NotFound';
 
-async function PackageList({ searchParams }) {
+async function PackagesPage({ searchParams }) {
 	const search = searchParams.search ? searchParams.search : '';
 	const page = searchParams.page ? Number(searchParams.page) : 1;
 
@@ -29,9 +29,9 @@ async function PackageList({ searchParams }) {
 	return (
 		<>
 			<div className={styles.packageListContainer}>
-				<SearchBarPackageList />
+				<SearchBarPackagesPage />
 				{packs.packageNums >= 1 ? 
-					<>
+					<div className={styles.packList}>
 						<PackageCardsContainer
 							packageLists={packageLists}
 						/>
@@ -42,7 +42,7 @@ async function PackageList({ searchParams }) {
 							/> :
 								<></>
 						}
-					</> :
+					</div> :
 						<NotFound />
 				}
 			</div>
@@ -68,4 +68,4 @@ async function GetPackagelist(query: string, pageSlice: string){
     return packs
 }
 
-export default PackageList
+export default PackagesPage

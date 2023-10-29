@@ -52,7 +52,7 @@ export async function generateStaticParams() {
 			current
 		}
 	}`;
-	const productLists = await client.fetch(query);
+	const productLists = await client.fetch(query, { next: { revalidate: 43200 } });
 
 	return productLists.map((productList) => ({
 		slug: productList.slug.current,
@@ -77,7 +77,7 @@ async function GetProductInfo( params: { slug: string }  ){
 				description,
 				"inclusionsCount": count(inclusions),
 			}[0...5]
-		}[0]`
+		}[0]`, { next: { revalidate: 43200 } }
 	);
   
     return product

@@ -57,3 +57,9 @@ export interface HomeCarouselPics{
 	name: string
 	pics: string
 }
+
+export interface Stats{
+	clients: number
+	repairs: number
+	soldProducts: number
+}

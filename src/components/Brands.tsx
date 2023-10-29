@@ -20,8 +20,10 @@ function Brands() {
 				friction: 14,
 				precision: 0.001
 			},
-			reverse: true,
 		}),
+		{
+			once: true,
+		}
 	)
 
 	return (
@@ -70,6 +72,39 @@ function Brands() {
 								<Image
 									src='/brands/xprinter-png.png'
 									alt='xprinter logo'
+									fill={true}
+									style={{objectFit: "contain"}}
+									quality={40}
+								/>
+							</div>
+						</a>
+						<a href='https://www.honeywell.com/us/en' target="_blank">
+							<div className={styles.logoContainer}>
+								<Image
+									src='/brands/Honeywell-Logo.png'
+									alt='Honeywell logo'
+									fill={true}
+									style={{objectFit: "contain"}}
+									quality={40}
+								/>
+							</div>
+						</a>
+						<a href='https://www.facebook.com/UniUbiGlobal/' target="_blank">
+							<div className={styles.logoContainer}>
+								<Image
+									src='/brands/uni-ubi.png'
+									alt='uni-ubi logo'
+									fill={true}
+									style={{objectFit: "contain"}}
+									quality={40}
+								/>
+							</div>
+						</a>
+						<a href='https://www.hidglobal.com/products/digitalpersona' target="_blank">
+							<div className={styles.logoContainer}>
+								<Image
+									src='/brands/digital-persona.png'
+									alt='digital persona logo'
 									fill={true}
 									style={{objectFit: "contain"}}
 									quality={40}

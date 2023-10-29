@@ -1,6 +1,6 @@
 import styles from '@/styles/PagesCSS/Home.module.scss'
 import client from '@/components/sanity.client';
-import { Products, HomeCarouselPics, Packs } from './interfaces';
+import { Products, HomeCarouselPics, Packs, Stats } from './interfaces';
 import Link from 'next/link'
 import HomeCarousel from '@/components/HomeCarousel'
 import Headline from '@/components/Headline';
@@ -8,6 +8,7 @@ import HorizontalProductsContainer from '@/components/HorizontalProductsContaine
 import PackageCardsContainer from '@/components/PackageCardsContainer';
 import CategorySelection from '@/components/CategorySelection';
 import Brands from '@/components/Brands';
+import Statistics from '@/components/Statistics';
 import { roboto300, roboto500 } from './fonts';
 import { BiSolidChevronsRight } from "react-icons/bi";
 
@@ -16,6 +17,7 @@ async function Home() {
 	const products: Array<Products> = homeQuery.products;
 	const homeCarouselPics: Array<HomeCarouselPics> = homeQuery.homeCarouselPics;
 	const packageLists: Array<Packs> = homeQuery.packageLists;
+	const statistics: Stats = homeQuery.statistics;
 
 	return (
 		<main>
@@ -29,7 +31,7 @@ async function Home() {
 			</div>
 
 			{/* New Arrivals of products Container only displays 10 newest items  */}
-			<div className={styles.newArrivalsContainer}>
+			<div className={styles.section}>
 				<div className={styles.selectionHeader}>
 					<h2 className={`${styles.selectionHeaderText} ${roboto500.className}`}>New Arrivals</h2>
 					<Link 
@@ -69,6 +71,11 @@ async function Home() {
 			<div className={styles.subsection}>
 				<Brands />
 			</div>
+			<div className={styles.section}>
+				<Statistics
+					stats={statistics}
+				/>
+			</div>
 		</main>
 	)
 }
@@ -95,8 +102,13 @@ async function getHomeQuery(){
 				"thumbPic": thumbPic.asset->url,
 				description,
 				"inclusionsCount": count(inclusions),
-			}[0...6]
-		}`
+			}[0...6],
+			"statistics": *[_type == "statistics"]{
+				repairs,
+				clients,
+				soldProducts,
+			}[0]
+		}`, { next: { revalidate: 10800 } }
 	);
 	return homeQuery
 }

@@ -30,11 +30,11 @@ function ParagraphPartRight(
 			to: {
 				opacity: 1,
 				x: 0,
-			},
-			reverse: true,
+			}
 		}),
 		{
 			rootMargin: '-30% 0px -30% 0px',
+			once: true,
 		}
 	)
 

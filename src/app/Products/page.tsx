@@ -66,7 +66,7 @@ async function GetProducts(query: string, pageSlice: string){
 				"slug": slug.current,
 				"thumbPic": thumbPic.asset->url,
 			}${pageSlice}
-		}`
+		}`, { next: { revalidate: 10800 } }
 	);
 	return products
 }

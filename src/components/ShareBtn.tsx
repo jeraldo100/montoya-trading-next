@@ -37,7 +37,7 @@ function ShareBtn() {
 			<FacebookMessengerShareButton
 				url={`https://montoya-trading-next.vercel.app${pathname}`}
 				// requires Facebook Application ID
-				appId={''}
+				appId={'305375775631555'}
 			>
 				<FacebookMessengerIcon size={18} round />
 			</FacebookMessengerShareButton>

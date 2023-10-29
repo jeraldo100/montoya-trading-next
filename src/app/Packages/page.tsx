@@ -62,7 +62,7 @@ async function GetPackagelist(query: string, pageSlice: string){
 				description,
 				"inclusionsCount": count(inclusions),
 			}${pageSlice}
-		}`
+		}`, { next: { revalidate: 10800 } }
 	);
     
     return packs

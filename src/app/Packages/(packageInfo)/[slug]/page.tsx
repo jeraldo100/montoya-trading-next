@@ -51,7 +51,7 @@ export async function generateStaticParams() {
 			current
 		}
 	}`;
-	const packageLists = await client.fetch(query);
+	const packageLists = await client.fetch(query, { next: { revalidate: 43200 } });
 
 	return packageLists.map((packageList) => ({
 		slug: packageList.slug.current,
@@ -72,7 +72,7 @@ async function GetPackageInfo( params: { slug: string } ){
 				"slug": slug.current,
 				"thumbPic": thumbPic.asset->url,
 			}
-    	}[0]`
+    	}[0]`, { next: { revalidate: 43200 } }
 	);
   
     return pack

@@ -62,7 +62,7 @@ async function GetProducts(){
 		groq`*[_type == "products"]{
 			"slug": slug.current,
 			_updatedAt
-		}`
+		}`, { next: { revalidate: 43200 } }
 	);
 	return products
 }
@@ -73,7 +73,7 @@ async function GetPacks(){
 		groq`*[_type == "packages"]{
 			"slug": slug.current,
 			_updatedAt
-		}`
+		}`, { next: { revalidate: 43200 } }
 	);
 	return products
 }

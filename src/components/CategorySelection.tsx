@@ -28,8 +28,10 @@ function CategorySelection() {
 				friction: 14,
 				precision: 0.001
 			},
-			reverse: true,
 		}),
+		{
+			once: true,
+		}
 	)
 
 	return (
